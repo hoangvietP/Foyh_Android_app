@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingTop="5dp"
+    android:gravity="top|center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/text_view_collapsed_1"
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chu kì mới: 30/9 - 7/10"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/text_view_collapsed_2"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:text="Kéo xuống để thêm biểu hiện"
+        android:textColor="@color/colorPrimary"
+        android:textSize="8sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_down"
+        style="@style/TextAppearance.Compat.Notification.Title"
+        tools:ignore="VectorDrawableCompat" />
+
+</LinearLayout>

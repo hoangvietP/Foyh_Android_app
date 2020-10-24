@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_expanded"
+        style="@style/TextAppearance.Compat.Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:text="Kì : 23/10 - 28/10"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded"
+                android:layout_weight="1"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dd" />
+
+            <TextView
+                android:id="@+id/tv00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Đau đầu"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+
+                android:id="@+id/image_view_expanded1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nm" />
+
+            <TextView
+                android:id="@+id/tv01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mụn"
+                android:textSize="8sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded2"
+                android:layout_width="33dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mm" />
+
+            <TextView
+                android:id="@+id/tv02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mệt mỏi"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded3"
+                android:layout_weight="1"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dn" />
+
+            <TextView
+                android:id="@+id/tv03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tức ngực"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded4"
+                android:layout_weight="1"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nn" />
+
+            <TextView
+                android:id="@+id/tv04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ngứa"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded5"
+                android:layout_weight="1"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tb" />
+
+            <TextView
+                android:id="@+id/tv05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Táo bón"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image_view_expanded6"
+                android:layout_weight="1"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dl" />
+
+            <TextView
+                android:id="@+id/tv06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dịch lạ"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

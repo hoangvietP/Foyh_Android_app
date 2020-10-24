@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2000"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+
+    <!--    taskbar-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:gravity="top"
+            >
+            <ImageView
+                android:id="@+id/profileIM"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/profile" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:gravity="top"
+            >
+            <ImageView
+                android:id="@+id/calendarIM"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/calendar" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:gravity="top"
+            >
+            <ImageView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/message" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:gravity="top"
+            >
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/setting" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
