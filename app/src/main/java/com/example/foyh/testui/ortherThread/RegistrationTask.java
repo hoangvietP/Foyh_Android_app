@@ -30,7 +30,6 @@ public class RegistrationTask extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         getDataMonth gdt = new getDataMonth();
-
         JSONObject jsonObject= null;
         JSONObject nn = new JSONObject();
         try {
@@ -48,7 +47,7 @@ public class RegistrationTask extends AsyncTask<String, Void, String> {
             e.printStackTrace();
         }
         String data= ConnectAsynchronously.connectAsynchronously(params[0],jsonObject);
-        Log.d("data from api",data);
+
         File fil = new File(context.getFilesDir(), "thisMonthData.json");
         FileWriter fileWriter = null;
         try {
@@ -96,6 +95,8 @@ public class RegistrationTask extends AsyncTask<String, Void, String> {
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e) {
             e.printStackTrace();
         }
         return data;

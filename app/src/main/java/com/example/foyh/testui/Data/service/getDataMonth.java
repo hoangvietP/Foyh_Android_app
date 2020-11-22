@@ -18,25 +18,31 @@ public class getDataMonth {
         JSONObject dataM= file.getData("monthData.json","dataM",context);
         JSONArray dataAr= dataM.getJSONArray("data");
         JSONArray dtrt = new JSONArray();
-        if (dataAr.length()<4){
+        if (dataAr.length()<5){
             if (dataAr.length()==1){
                 for (int i=0;i<=3;i++){
-                    dtrt.put(dataAr.getJSONObject(0));
+                    dtrt.put(dataAr.getJSONObject(dataAr.length()-1));
                 }
             }
             if (dataAr.length()==2){
                 dtrt.put(dataAr.getJSONObject(0));
                 dtrt.put(dataAr.getJSONObject(0));
-                dtrt.put(dataAr.getJSONObject(1));
-                dtrt.put(dataAr.getJSONObject(1));
+                dtrt.put(dataAr.getJSONObject(0));
+                dtrt.put(dataAr.getJSONObject(0));
             }
             if (dataAr.length()==3){
                 dtrt.put(dataAr.getJSONObject(0));
+                dtrt.put(dataAr.getJSONObject(0));
+                dtrt.put(dataAr.getJSONObject(1));
+                dtrt.put(dataAr.getJSONObject(1));
+            }
+            if (dataAr.length()==4){
+                dtrt.put(dataAr.getJSONObject(0));
                 dtrt.put(dataAr.getJSONObject(1));
                 dtrt.put(dataAr.getJSONObject(2));
-                dtrt.put(dataAr.getJSONObject(2));
+                dtrt.put(dataAr.getJSONObject(3));
             }
-        }else if (dataAr.length()>=4){
+        }else if (dataAr.length()>=5){
             for (int i=dataAr.length()-4;i<=dataAr.length()-1;i++){
                 dtrt.put(dataAr.getJSONObject(i));
             }
@@ -44,6 +50,14 @@ public class getDataMonth {
         JSONObject dt = new JSONObject();
         dt.put("data",dtrt);
         Log.d("data send to api",dt.toString());
+        getDataMonth gdt = new getDataMonth();
+        try {
+            gdt.saveDataThisMonth(context);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return dt;
     }
     public boolean saveDataThisMonth(Context context) throws FileNotFoundException, JSONException {
@@ -71,7 +85,6 @@ public class getDataMonth {
         dtt.put("data",dataAr);
         JSONObject dtt1 = new JSONObject();
         dtt1.put("dataM",dtt);
-        Log.d("dttt1",dtt1.toString());
         file.saveData("monthData.json",dtt1,context);
         return true;
     }

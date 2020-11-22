@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/health_bg2"
-    android:gravity="center"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:weightSum="2"
     tools:context=".activity.startActivity">
@@ -14,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="bottom|center"
+        android:gravity="top|center"
         android:orientation="vertical"
         android:weightSum="8"
-        tools:context=".MainActivity">
-
+        android:paddingTop="30dp"
+        tools:context=".activity.startActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,18 +26,6 @@
             android:textColorLink="#B3A6A6"
             android:textSize="24sp"
             android:textStyle="bold|italic">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:textColorLink="#B3A6A6"
-            android:textSize="24sp"
-            android:textStyle="bold|italic">
-
         </TextView>
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
@@ -46,16 +33,23 @@
             android:layout_weight="1"
             android:gravity="bottom|center"
             android:orientation="horizontal"
-            tools:context=".MainActivity">
-            <EditText
-                android:id="@+id/name"
+            android:paddingTop="40dp"
+            tools:context=".activity.startActivity">
+            <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chu kì của bạn kéo dài khoảng:  "
+                android:textColorLink="#B3A6A6"
+                android:textSize="18sp"/>
+            <EditText
+                android:id="@+id/longMonth"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
                 android:ems="10"
-                android:hint=" Tên người dùng..."
-                android:inputType="text"
+                android:hint=" ngày"
+                android:inputType="numberDecimal"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -65,39 +59,81 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="80dp"
+            android:orientation="horizontal"
             android:paddingTop="15dp"
-            tools:context=".MainActivity">
-            <RadioGroup
-                android:id="@+id/grGender"
+            tools:context=".activity.startActivity">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <RadioButton
-                    android:id="@+id/nam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="20dp"
-                    android:text="Nam"
-                    android:textColor="#0DA4E1"
-                    android:textSize="18sp" />
-
-                <RadioButton
-                    android:id="@+id/nu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nữ"
-                    android:paddingRight="10dp"
-                    android:textColor="#0DA4E1"
-                    android:textSize="18sp" />
-
-            </RadioGroup>
+                android:text="Kì hành kinh kéo dài khoảng:  "
+                android:textColorLink="#B3A6A6"
+                android:textSize="18sp"/>
+            <EditText
+                android:id="@+id/longDt"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint=" ngày"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            tools:context=".activity.startActivity">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chu kì gần nhất bắt đầu vào: "
+                android:textColorLink="#B3A6A6"
+                android:paddingBottom="15dp"
+                android:textSize="18sp"/>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    >
+    <EditText
+        android:id="@+id/day"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint=" ngày"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="30sp"></TextView>
+    <EditText
+        android:id="@+id/month"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint=" Tháng"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -108,10 +144,7 @@
         android:gravity="bottom"
         android:orientation="vertical"
         android:weightSum="2"
-        tools:context=".MainActivity">
-
-
-
+        tools:context=".activity.female">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -122,7 +155,7 @@
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
             android:weightSum="6"
-            tools:context=".MainActivity">
+            tools:context=".activity.female">
 
             <TextView
                 android:id="@+id/pre"
@@ -170,34 +203,21 @@
                 android:gravity="center"
                 android:text=""
                 android:textSize="20sp" />
-            <fragment
-                android:id="@+id/listFragment"
-                class="com.example.foyh.fragment.setProfileUser"
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:layout="@layout/nextfrag">
-
-            </fragment>
-
+                android:background="@drawable/custom_padding"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:text="Tiếp theo"
+                android:onClick="test"
+                android:textColor="#0DA4E1"
+                android:textColorHighlight="#131212"
+                android:textSize="18sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/name"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="100dp"-->
-    <!--        android:layout_marginLeft="100dp"-->
-    <!--        android:layout_marginTop="160dp"-->
-    <!--        android:ems="10"-->
-    <!--        android:background="@drawable/custom_input"-->
-    <!--        android:padding="10dp"-->
-    <!--        android:inputType="textPassword"-->
-    <!--        android:hint=" Username"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        android:drawableLeft="@drawable/ic_baseline"-->
-    <!--        />-->
 </androidx.appcompat.widget.LinearLayoutCompat>

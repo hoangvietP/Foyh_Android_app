@@ -24,14 +24,11 @@ import java.util.ArrayList;
 
 public class SynsDay  extends AsyncTask<String, Void, String> {
 
-    ProgressDialog progressDialog;
     Context context;
-    TextView text;
     ArrayList<Integer> stt=null;
 
-    public SynsDay(Context context, TextView text) {
+    public SynsDay(Context context) {
         this.context = context;
-        this.text=text;
     }
 
     @Override
@@ -44,10 +41,8 @@ public class SynsDay  extends AsyncTask<String, Void, String> {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected String doInBackground(String... strings) {
-
         int i=0;
        while (i>=0) {
-           new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"https://47dd89dadac7.ngrok.io/api/dudoan");
            try {
                serviceIntent= new Intent(context, ExampleService.class);
                try {
@@ -56,7 +51,7 @@ public class SynsDay  extends AsyncTask<String, Void, String> {
                    e.printStackTrace();
                }
                ContextCompat.startForegroundService(context, serviceIntent);
-               Thread.sleep(10000000);
+               Thread.sleep(50000);
 
            } catch (InterruptedException | JSONException e) {
                e.printStackTrace();

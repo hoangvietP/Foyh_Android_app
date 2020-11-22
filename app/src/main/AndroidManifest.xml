@@ -13,15 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <service android:name=".testui.Notification.ExampleService" />
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.homeactivity"></activity>
+        <activity android:name=".activity.homeactivity" />
         <activity android:name=".activity.startActivity" />
+
         <receiver android:name=".testui.Notification.NotiReceiver.NotificationReceiver" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc1" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc2" />

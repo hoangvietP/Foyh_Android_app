@@ -26,6 +26,17 @@ public class DataServiceMethod {
         //data to save
         //get stt from stt file
         fileDAO file = new fileDAO();
+        JSONObject dateStatus= new JSONObject();
+        try{
+        dateStatus = file.getData("dateStatus.json","dd",context);
+        }catch (NullPointerException | JSONException |FileNotFoundException ee){
+            JSONObject d = new JSONObject();
+            JSONObject dd= new JSONObject();
+            d.put("d",1);
+            dd.put("dd",d);
+            file.saveData("dateStatus.json",dd,context);
+        }
+        int dateStt= dateStatus.getInt("d");
         String conten="";
         JSONArray sttArr=new JSONArray();
         JSONArray sttvArr=new JSONArray();
@@ -76,8 +87,6 @@ public class DataServiceMethod {
 //        setData(context,"2020-10-28",14,19,7,2,2,1,34,bhrtt,bhdtt,0);
         ArrayList<Integer> noti= new ArrayList<Integer>();
         //test data
-
-        JSONObject rt= new JSONObject();
         JSONObject ob=  file.getData("thisMonthData.json","data",context);
         String dateUpdate= ob.getString("dayupdate");
         JSONArray ard=ob.getJSONArray("dataday");
@@ -96,7 +105,6 @@ public class DataServiceMethod {
         try {
             JSONObject dataM= file.getData("monthData.json","dataM",context);
             JSONArray dataAr= dataM.getJSONArray("data");
-            rt=dataAr.getJSONObject(dataAr.length()-1);
         }catch (FileNotFoundException e){
             e.printStackTrace();
             JSONArray bhfld= new JSONArray();
@@ -113,11 +121,15 @@ public class DataServiceMethod {
         int lm= ardt1.getInt(1);
         int ldt= ardt1.getInt(2);
         JSONArray rttt= ardt1.getJSONArray(3);
-        int m = ardt1.getInt(0);
         JSONArray bhday= artd1.getJSONArray("bh");
+        if (dateStt!=day){
+            //put bh to bh theo ngay
+            bhday.put(sttvArr);
+        }
 
 //        JSONArray bh = bhday.getJSONArray(bhday.length()-1);
         JSONArray bh= sttvArr;
+
         try{
             bh.getInt(0);
         }catch (JSONException i){
@@ -206,7 +218,7 @@ public class DataServiceMethod {
                         }
                     }
                 }
-                if (countRT>=2){
+                if (countRT>=2 && rttt.getInt(0)==0 && dayrt[0]>day+3){
                     trt.remove(0);
                     trt.put(0,day+3);
                     trt.put(1,day+3+(dayrt[1] - dayrt[0]));
@@ -264,7 +276,7 @@ public class DataServiceMethod {
                 }
             }
 
-            if (countDt>=2 && countDt!=12 && countDt!=13){
+            if (countDt>=2 && countDt!=12 && countDt!=13 && day+3<longMo-longdt && ldt==0 && lm==0){
                 longMo=day+3;
             } else  if(countDt==12){
                 longMo= day;
@@ -292,11 +304,15 @@ public class DataServiceMethod {
             lm=longMo;
             ldt=longdt;
         }
-        if (day== longMo+longdt+5 && lm==0 && countdt!=0){ //neu nguoi dung co chu ki kn keo dai hon du daon 5 ngay
+        if (day>= longMo+longdt+5 && ldt==0){ //neu nguoi dung co chu ki kn keo dai hon du daon 5 ngay
             // se tu dong nhap vao longdt nhu du doan // phan nay se them cn thong bao neu ng dung gap van de ve suc khoe
             ldt=longdt;
         }
         if (day==dayrt[0] && rttt.getInt(0)==0 && countrt!=0){
+            rttt.remove(0);
+            rttt.put(0,dayrt[0]);
+            rttt.put(1,dayrt[1]);
+        }if (day==dayrt[0]+5 && rttt.getInt(0)==0){
             rttt.remove(0);
             rttt.put(0,dayrt[0]);
             rttt.put(1,dayrt[1]);
@@ -338,18 +354,10 @@ public class DataServiceMethod {
 //
 //
 //
-        setData(context,dateUpdate,trt.getInt(0),trt.getInt(1),longdt,countrt,countdt,month,longMo,bhrt,bhdt,0);
+        setData(day,context,dateUpdate,trt.getInt(0),trt.getInt(1),longdt,countrt,countdt,month,longMo,bhrt,bhdt,0);
         saveData(context,rttt.getInt(0),rttt.getInt(1),ldt,lm,bhday,month);
         if (ldt!=0){
-            getDataMonth gdt = new getDataMonth();
-            try {
-                gdt.saveDataThisMonth(context);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"https://052ce956a6ae.ngrok.io/api/dudoan");
+            new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"https://057d2c97280a.ngrok.io/api/dudoan");
 
         }
         //conten dt,rt
@@ -364,7 +372,7 @@ public class DataServiceMethod {
             sttDt.put(6);
             sttArr=sttDt;
         }else if (day>=dayrt[0] && day<= dayrt[1]){
-            conten= "Rụng trứng ngày thứ: "+ String.valueOf(day-dayrt[0]);
+            conten= "Rụng trứng ngày thứ: "+ String.valueOf(day-dayrt[0]+1);
             JSONArray sttDt= new JSONArray();
             sttDt.put(0);sttDt.put(1);sttDt.put(2);
             sttDt.put(3);sttDt.put(4);sttDt.put(5);
@@ -393,16 +401,23 @@ public class DataServiceMethod {
             sttDt.put(12);
             sttArr=sttDt;
         }
+        //if on next day => reset sttvstt
+        if (dateStt!=day){
+            JSONArray bhh = new JSONArray();
+            sttvArr=bhh;
+
+        }
         saveStt(context,sttArr,sttvArr,conten);
         return conten;
     }
-    public void setData(Context context, String dateUpdate, int bgrt, int ktrt, int longdt, int countRT, int countDT, int nameMo, int longMo, JSONArray bhrt, JSONArray bhdt, int dayst) throws JSONException {
+    public void setData(int da,Context context, String dateUpdate, int bgrt, int ktrt, int longdt, int countRT, int countDT, int nameMo, int longMo, JSONArray bhrt, JSONArray bhdt, int dayst) throws JSONException {
         JSONObject obj = new JSONObject();
         JSONArray dtm = new JSONArray();
 
 
         //date up date
-        int day=getCountDay(dateUpdate);
+//        int day=getCountDay(dateUpdate);
+        int day = da+1;
         dtm.put(day);
         dtm.put(nameMo);
         dtm.put(longMo);
@@ -424,6 +439,11 @@ public class DataServiceMethod {
         data.put("data",obj);
         fileDAO file = new fileDAO();
         file.saveData("thisMonthData.json",data,context);
+        JSONObject d = new JSONObject();
+        JSONObject dd= new JSONObject();
+        d.put("d",day-1);
+        dd.put("dd",d);
+        file.saveData("dateStatus.json",dd,context);
         Log.d("thisMonthData",data.toString());
     }
     public void saveData(Context context, int bgrt, int ktrt, int longdt, int longMo, JSONArray bh, int month) throws JSONException {
@@ -479,7 +499,7 @@ public class DataServiceMethod {
         }
         int daycl=d-day;
         if (daycl>=lg){
-            rt= String.valueOf(daycl+lg)+"/"+month;
+            rt= String.valueOf(day+lg)+"/"+month;
         }else if (daycl<lg &&  month==12){
             int cl = lg-daycl;
             if (monthD[month+1]>= cl){
@@ -491,10 +511,10 @@ public class DataServiceMethod {
         }
         else {
             int cl = lg-daycl;
-            if (monthD[month+1]>= cl){
+            if (monthD[month-1]>= cl){
                 rt= String.valueOf(cl)+"/"+ String.valueOf(month+1);
             }else {
-                int c=cl- monthD[month+1];
+                int c=cl- monthD[month];
                 rt= String.valueOf(c)+"/"+ String.valueOf(month+2);
             }
         }
