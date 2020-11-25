@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
+import java.net.ConnectException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -153,28 +154,40 @@ public class DataServiceMethod {
         // gan bh theo ngay vao 1 mang
         int[] bhrtn1= new int[bhrt1.length()];
         for (int i =0 ; i<=bhrt1.length()-1;i++){
-            bhrtn1[i]= bhrt1.getInt(i);
+            if (!bhrt1.get(i).equals(null)){
+                bhrtn1[i]= bhrt1.getInt(i);
+            }
         }
         int[] bhrtn2= new int[bhrt2.length()];
         for (int i =0 ; i<=bhrt2.length()-1;i++){
-            bhrtn2[i]= bhrt2.getInt(i);
+            if (!bhrt2.get(i).equals(null)){
+                bhrtn2[i]= bhrt2.getInt(i);
+            }
         }
         int[] bhrtn3= new int[bhrt3.length()];
         for (int i =0 ; i<=bhrt3.length()-1;i++){
-            bhrtn3[i]= bhrt3.getInt(i);
+            if (!bhrt3.get(i).equals(null)){
+                bhrtn3[i]= bhrt3.getInt(i);
+            }
         }
 
         int[] bhdtn1= new int[bhdt1.length()];
         for (int i =0 ; i<=bhdt1.length()-1;i++){
-            bhdtn1[i]= bhdt1.getInt(i);
+            if (!bhdt1.get(i).equals(null)){
+                bhdtn1[i]= bhdt1.getInt(i);
+            }
         }
         int[] bhdtn2= new int[bhdt2.length()];
         for (int i =0 ; i<=bhdt2.length()-1;i++){
-            bhdtn2[i]= bhdt2.getInt(i);
+            if (!bhdt2.get(i).equals(null)){
+                bhdtn2[i]= bhdt2.getInt(i);
+            }
         }
         int[] bhdtn3= new int[bhdt3.length()];
         for (int i =0 ; i<=bhdt3.length()-1;i++){
-            bhdtn3[i]= bhdt3.getInt(i);
+            if (!bhdt3.get(i).equals(null)){
+                bhdtn3[i]= bhdt3.getInt(i);
+            }
         }
             //if Rt-5 < day < Rt
         //count rt
@@ -357,8 +370,7 @@ public class DataServiceMethod {
         setData(day,context,dateUpdate,trt.getInt(0),trt.getInt(1),longdt,countrt,countdt,month,longMo,bhrt,bhdt,0);
         saveData(context,rttt.getInt(0),rttt.getInt(1),ldt,lm,bhday,month);
         if (ldt!=0){
-            new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"https://057d2c97280a.ngrok.io/api/dudoan");
-
+                new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"https://d8b73b5b7a18.ngrok.io/api/dudoan");
         }
         //conten dt,rt
 
@@ -427,10 +439,8 @@ public class DataServiceMethod {
         rtt.put(ktrt);
         dtm.put(rtt);
         obj.put("dataday",dtm);
-
         obj.put("bhrt",bhrt);
         obj.put("bhdt",bhdt);
-
         obj.put("dayupdate",dateUpdate);
         obj.put("countRT",countRT);
         obj.put("countDT",countDT);
@@ -444,7 +454,8 @@ public class DataServiceMethod {
         d.put("d",day-1);
         dd.put("dd",d);
         file.saveData("dateStatus.json",dd,context);
-        Log.d("thisMonthData",data.toString());
+        Log.d("this month data",data.toString());
+
     }
     public void saveData(Context context, int bgrt, int ktrt, int longdt, int longMo, JSONArray bh, int month) throws JSONException {
         JSONObject obk = new JSONObject();
@@ -466,7 +477,7 @@ public class DataServiceMethod {
         obb.put("dataM",obk);
         fileDAO file = new fileDAO();
         file.saveData("monthData.json",obb,context);
-        Log.d("monthData",obb.toString());
+        Log.d("month data",obb.toString());
     }
     public void saveStt(Context context, JSONArray stt, JSONArray sttv, String st) throws JSONException {
         JSONObject obb1= new JSONObject();
@@ -503,10 +514,10 @@ public class DataServiceMethod {
         }else if (daycl<lg &&  month==12){
             int cl = lg-daycl;
             if (monthD[month+1]>= cl){
-                rt= String.valueOf(cl)+"/"+ String.valueOf(month+1);
+                rt= String.valueOf(cl)+"/"+ 1;
             }else {
                 int c= cl-monthD[month+1];
-                rt= String.valueOf(c)+"/"+ String.valueOf(month+2);
+                rt= String.valueOf(c)+"/"+ 2;
             }
         }
         else {

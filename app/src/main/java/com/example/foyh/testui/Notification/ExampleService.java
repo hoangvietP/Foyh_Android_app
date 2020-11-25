@@ -54,9 +54,7 @@ public class ExampleService extends Service {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         startForeground(1, notification);
-        Log.d("notifi","ok");
         return START_STICKY;
     }
     @Override
@@ -75,7 +73,6 @@ public class ExampleService extends Service {
         JSONArray stt = ob.getJSONArray("stt");
         JSONArray sttv = ob.getJSONArray("sttv");
         String conten = ob.getString("st");
-        Log.d("NOtification",conten);
 
 
         RemoteViews collapsedView = new RemoteViews(this.getPackageName(),
@@ -123,68 +120,85 @@ public class ExampleService extends Service {
             }
             int idIm=0;
             int idV=0;
+            String nameIcon="";
             if (g==true){
                 switch (vl){
-                    case 0 : idIm=R.drawable.ca;
+                    case 0 : idIm=R.drawable.iconclick6;
                         break;
-                    case 1 :idIm=R.drawable.ca;
+                    case 1 :idIm=R.drawable.iconclick1;
                         break;
-                    case 2 : idIm=R.drawable.ca;
+                    case 2 : idIm=R.drawable.iconclick10;
                         break;
-                    case 3 : idIm=R.drawable.ca;
+                    case 3 : idIm=R.drawable.iconclick11;
                         break;
-                    case 4 : idIm=R.drawable.ca;
+                    case 4 : idIm=R.drawable.iconclick2;
                         break;
-                    case 5 : idIm=R.drawable.ca;
+                    case 5 : idIm=R.drawable.iconclick3;
                         break;
-                    case 6 : idIm=R.drawable.ca;
+                    case 6 : idIm=R.drawable.iconclick4;
                         break;
                     case 7 : idIm=R.drawable.ca;
                         break;
-                    case 12 : idIm=R.drawable.ca;
+                    case 12 : idIm=R.drawable.iconclick5;
                         break;
-                    case 13 : idIm=R.drawable.ca;
+                    case 13 : idIm=R.drawable.iconclick5;
                         break;
 
                 }
             }else if (g==false){
                 switch (vl){
-                    case 0 : idIm=R.drawable.dd;
+                    case 0 : idIm=R.drawable.icnotification1;
+                    nameIcon="Nổi mụn";
                         break;
-                    case 1 :idIm=R.drawable.nm;
+                    case 1 :idIm=R.drawable.icnotification2;
+                        nameIcon="Mệt mỏi";
                         break;
-                    case 2 : idIm=R.drawable.mm;
+                    case 2 : idIm=R.drawable.icnotification8;
+                        nameIcon="Đau, tức ngưc";
                         break;
-                    case 3 : idIm=R.drawable.dn;
+                    case 3 : idIm=R.drawable.icnotification4;
+                        nameIcon="Chán ăn";
                         break;
-                    case 4 : idIm=R.drawable.nn;
+                    case 4 : idIm=R.drawable.icnotification5;
+                        nameIcon="Mệt mỏi";
                         break;
-                    case 5 : idIm=R.drawable.dl;
+                    case 5 : idIm=R.drawable.icnotification6;
+                        nameIcon="Đau lưng";
                         break;
-                    case 6 : idIm=R.drawable.tb;
+                    case 6 : idIm=R.drawable.icnotification7;
+                        nameIcon="Buồn";
                         break;
-                    case 7 : idIm=R.drawable.ca;
+                    case 7 : idIm=R.drawable.icnotification9;
                         break;
-                    case 12 : idIm=R.drawable.ca;
+                    case 12 : idIm=R.drawable.icnotification3;
+                        nameIcon="Mùa dâu";
                         break;
-                    case 13 : idIm=R.drawable.ca;
+                    case 13 : idIm=R.drawable.icnotification3;
                         break;
                 }
             }
             switch (i){
                 case 0 : idV=R.id.image_view_expanded;
+                    expandedView.setTextViewText(R.id.tv00,nameIcon);
                     break;
                 case 1 :idV=R.id.image_view_expanded1;
+                    expandedView.setTextViewText(R.id.tv01,nameIcon);
                     break;
                 case 2 : idV=R.id.image_view_expanded2;
+                    expandedView.setTextViewText(R.id.tv02,nameIcon);
                     break;
                 case 3 : idV=R.id.image_view_expanded3;
+                    expandedView.setTextViewText(R.id.tv03,nameIcon);
                     break;
                 case 4 : idV=R.id.image_view_expanded4;
+                    expandedView.setTextViewText(R.id.tv04,nameIcon);
                     break;
                 case 5 : idV=R.id.image_view_expanded5;
+                    expandedView.setTextViewText(R.id.tv05,nameIcon);
                     break;
                 case 6 : idV=R.id.image_view_expanded6;
+                    expandedView.setTextViewText(R.id.tv06,nameIcon);
+                    break;
             }
             expandedView.setImageViewResource(idV,idIm);
         }

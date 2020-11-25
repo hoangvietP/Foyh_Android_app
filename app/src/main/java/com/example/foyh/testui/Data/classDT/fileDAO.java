@@ -89,7 +89,6 @@ public class fileDAO {
             sb.append(s);
             sb.append("\n");
         }
-
         JSONObject jsonRoot = null;
         try {
             jsonRoot = new JSONObject(sb.toString());

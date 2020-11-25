@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="85dp"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bgnotification"
+    >
 
     <TextView
         android:id="@+id/text_view_expanded"
@@ -31,11 +34,13 @@
 
             <ImageView
                 android:id="@+id/image_view_expanded"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
+                app:srcCompat="@drawable/iconlogo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/dd" />
+
+                />
 
             <TextView
                 android:id="@+id/tv00"
@@ -57,11 +62,11 @@
             <ImageView
 
                 android:id="@+id/image_view_expanded1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/nm" />
+                app:srcCompat="@drawable/iconlogo"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv01"
@@ -81,11 +86,11 @@
 
             <ImageView
                 android:id="@+id/image_view_expanded2"
-                android:layout_width="33dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/mm" />
+                app:srcCompat="@drawable/iconlogo"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv02"
@@ -107,10 +112,10 @@
             <ImageView
                 android:id="@+id/image_view_expanded3"
                 android:layout_weight="1"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dn" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/iconlogo"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv03"
@@ -133,10 +138,10 @@
             <ImageView
                 android:id="@+id/image_view_expanded4"
                 android:layout_weight="1"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/nn" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/iconlogo"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv04"
@@ -158,10 +163,10 @@
             <ImageView
                 android:id="@+id/image_view_expanded5"
                 android:layout_weight="1"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/tb" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/iconlogo"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv05"
@@ -184,10 +189,11 @@
             <ImageView
                 android:id="@+id/image_view_expanded6"
                 android:layout_weight="1"
-                android:layout_width="38dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/iconlogo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/dl" />
+/>
 
             <TextView
                 android:id="@+id/tv06"

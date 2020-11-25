@@ -29,14 +29,6 @@ public class rc6  extends BroadcastReceiver {
             e.printStackTrace();
         }
 
-
-        try {
-            new DataServiceMethod().testData(context,0);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
         Intent serviceIntent= new Intent(context, ExampleService.class);
         ContextCompat.startForegroundService(context, serviceIntent);
 

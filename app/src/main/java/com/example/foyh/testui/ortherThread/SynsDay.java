@@ -51,7 +51,7 @@ public class SynsDay  extends AsyncTask<String, Void, String> {
                    e.printStackTrace();
                }
                ContextCompat.startForegroundService(context, serviceIntent);
-               Thread.sleep(50000);
+               Thread.sleep(2000);
 
            } catch (InterruptedException | JSONException e) {
                e.printStackTrace();
