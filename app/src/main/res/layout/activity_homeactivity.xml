@@ -28,12 +28,12 @@
             android:orientation="vertical"
             android:gravity="top"
             >
-            <ImageView
-                android:id="@+id/profileIM"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="2"
-                app:srcCompat="@drawable/profile" />
+<!--            <ImageView-->
+<!--                android:id="@+id/profileIM"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_weight="2"-->
+<!--                app:srcCompat="@drawable/profile" />-->
 
             <TextView
                 android:id="@+id/profileCT"

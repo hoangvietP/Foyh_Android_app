@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="4"
+            >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/custom_padding"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
+                <NumberPicker
+                    android:id="@+id/number"
+                    style="@android:style/Widget.Material.Light.NumberPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:textAlignment="center"
+                    android:textDirection="firstStrongLtr"
+                    tools:targetApi="n"
+                    android:layout_weight="1"
+                    android:theme="@style/NumberPickerTheme"
+                    android:layout_gravity="center_horizontal" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_weight="1"
+            ></TextView>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/next_button1"
+            android:layout_width="match_parent"
+            android:text="Tiếp Theo"
+            android:layout_height="90dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="setQuessiton"
+            />
+</androidx.appcompat.widget.LinearLayoutCompat>

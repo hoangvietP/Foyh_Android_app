@@ -26,13 +26,13 @@ public class Notifi extends Application {
         }
     }
 
-    private ArrayList<Integer> Noti;// du lieu trang thai cua thanh thong bao
+    private int step;
 
-    public void setNoti(ArrayList<Integer> noti) {
-        Noti = noti;
+    public void setStep(int step) {
+        this.step = step;
     }
 
-    public ArrayList<Integer> getNoti() {
-        return Noti;
+    public int getStep() {
+        return step;
     }
 }

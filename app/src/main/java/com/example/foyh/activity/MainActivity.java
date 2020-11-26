@@ -35,25 +35,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
-        fileDAO file= new fileDAO();
-        boolean us = true;
-        try {
-            file.getDataOB("thisMonthData.json",this);
-        }catch (FileNotFoundException | JSONException e){
-            // run start activity
-            us=false;
-            Intent intent = new Intent(MainActivity.this, startActivity.class);
-            startActivity(intent);
-        }
+//        fileDAO file= new fileDAO();
+//        boolean us = true;
+//        try {
+//            file.getDataOB("thisMonthData.json",this);
+//        }catch (FileNotFoundException | JSONException e){
+//            // run start activity
+//            us=false;
+////            Intent intent = new Intent(MainActivity.this, startActivity.class);
+////            startActivity(intent);
+//        }
+//        if (us==true){
+//            Intent intent = new Intent(MainActivity.this, step1.class);
+//            startActivity(intent);
+//        }else if(us==false){
+//            Intent intent = new Intent(MainActivity.this, step1.class);
+//            startActivity(intent);
+//        }
 
-        //check load data then go to home activity
-        if (us==true){
-            new SynsDay(this).execute("gh");
-        }else if(us==false){
-            Intent intent = new Intent(MainActivity.this, startActivity.class);
-            startActivity(intent);
-        }
-
-
+        Intent intent = new Intent(MainActivity.this, step1.class);
+        startActivity(intent);
     }
 }

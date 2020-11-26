@@ -49,24 +49,24 @@ public class threadXl extends Thread {
     Intent serviceIntent;
     int k1=3;
 
-        public void realtimeSt(ArrayList<Integer> stt){
-            ((Notifi) context.getApplicationContext()).setNoti(stt);
-            serviceIntent= new Intent(context, ExampleService.class);
-            new CountDownTimer(3000, 100) {
-                public void onTick(long millisUntilFinished) {
-                    ArrayList<Integer> nt = new ArrayList<Integer>();
-                    nt = ((Notifi) context.getApplicationContext()).getNoti();
-                    int k = nt.get(0);
-                    if (k != k1) {
-                        ContextCompat.startForegroundService(context, serviceIntent);
-                    }
-                    k1 = k;
-                }
-                public void onFinish() {
-                    Thread.currentThread();
-                }
-            }.start();
-        }
+//        public void realtimeSt(ArrayList<Integer> stt){
+//            ((Notifi) context.getApplicationContext()).setNoti(stt);
+//            serviceIntent= new Intent(context, ExampleService.class);
+//            new CountDownTimer(3000, 100) {
+//                public void onTick(long millisUntilFinished) {
+//                    ArrayList<Integer> nt = new ArrayList<Integer>();
+//                    nt = ((Notifi) context.getApplicationContext()).getNoti();
+//                    int k = nt.get(0);
+//                    if (k != k1) {
+//                        ContextCompat.startForegroundService(context, serviceIntent);
+//                    }
+//                    k1 = k;
+//                }
+//                public void onFinish() {
+//                    Thread.currentThread();
+//                }
+//            }.start();
+//        }
 
     Notification notification;
 

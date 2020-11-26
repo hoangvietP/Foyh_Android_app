@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+    android:weightSum="3"
+
+            android:orientation="vertical"
+            >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/custom_padding"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:paddingBottom="10dp"
+            >
+                <NumberPicker
+                    android:id="@+id/np"
+                    style="@android:style/Widget.Material.Light.NumberPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:textAlignment="center"
+                    android:textDirection="firstStrongLtr"
+                    tools:targetApi="n"
+                    android:layout_weight="1"
+                    android:theme="@style/NumberPickerTheme"
+                    android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chọn"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    ></TextView>
+                <NumberPicker
+                    android:id="@+id/np1"
+                    style="@android:style/Widget.Material.Light.NumberPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:textAlignment="center"
+                    android:textDirection="firstStrongLtr"
+                    tools:targetApi="n"
+                    android:layout_weight="1"
+                    android:theme="@style/NumberPickerTheme"
+                    android:layout_gravity="center_horizontal" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+                android:layout_weight="1"
+
+                ></TextView>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:text="Tiếp Theo"
+            android:layout_gravity="bottom"
+            android:layout_height="70dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark"
+            />
+        </androidx.appcompat.widget.LinearLayoutCompat>

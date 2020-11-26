@@ -17,7 +17,7 @@ public class homeactivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_homeactivity);
+        setContentView(R.layout.step1);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }
