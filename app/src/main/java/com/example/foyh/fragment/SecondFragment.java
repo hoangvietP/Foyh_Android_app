@@ -19,7 +19,7 @@ import org.json.JSONArray;
 public class SecondFragment extends Fragment {
     private View view;
     private int rt=0;
-    private int k=1;
+    private int k=0;
     private JSONArray data = new JSONArray();
     public void setDt(int day,int month){
         JSONArray ar = new JSONArray();
@@ -27,13 +27,21 @@ public class SecondFragment extends Fragment {
         ar.put(month);
         data.put(ar);
     }
+    public SecondFragment(int k){
+        this.k =k;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         NumberPicker np;
         view = inflater.inflate(R.layout.step2, container, false);
         np = view.findViewById(R.id.number);
-        np.setMinValue(1);
-        np.setMaxValue(50);
+        np.setMinValue(4);
+        np.setMaxValue(8);
+        if (k==1) {
+            np.setMinValue(25);
+            np.setMaxValue(37);
+        }
         np.setWrapSelectorWheel(true);
         Button btn = view.findViewById(R.id.next_button1);
         np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -53,13 +61,13 @@ public class SecondFragment extends Fragment {
                 String qs="";
                 data.put(rt);
                 switch (k){
-                    case 0: qs="Mùa dâu (kỳ kinh nguyệt) của bạn \n thường kéo dài bao lâu ?";
-
+                    case 0: qs="Một chu kỳ của bạn \n thường kéo dài bao nhiêu ngày ?";
+                        FragmentManager f = getFragmentManager();
+                        FragmentTransaction fragmentTransactio = f.beginTransaction();
+                        fragmentTransactio.replace(R.id.frameLayout,new SecondFragment(1));
+                        fragmentTransactio.commit();
                     break;
-                    case 1: qs="Một chu kỳ của bạn \n thường kéo dài bao nhiêu ngày ?";
-
-                        break;
-                    case 2: qs="Bạn thường rụng trứng \n  từ ngày bao nhiêu đến... ? ";
+                    case 1: qs="Bạn thường rụng trứng \n  từ ngày bao nhiêu đến... ? ";
                         FragmentManager fm1 = getFragmentManager();
                         FragmentTransaction fragmentTransaction1 = fm1.beginTransaction();
                         fragmentTransaction1.replace(R.id.frameLayout,new FistFragment(1,data));

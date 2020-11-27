@@ -11,7 +11,7 @@
             >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="80dp"
             android:background="@drawable/custom_padding"
             android:gravity="center"
             android:orientation="horizontal"
@@ -21,7 +21,7 @@
                     android:id="@+id/number"
                     style="@android:style/Widget.Material.Light.NumberPicker"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="80dp"
                     android:textAlignment="center"
                     android:textDirection="firstStrongLtr"
                     tools:targetApi="n"
@@ -39,7 +39,7 @@
             android:id="@+id/next_button1"
             android:layout_width="match_parent"
             android:text="Tiếp Theo"
-            android:layout_height="90dp"
+            android:layout_height="80dp"
             android:textColor="@android:color/white"
             android:background="@android:color/holo_blue_dark"
             android:onClick="setQuessiton"

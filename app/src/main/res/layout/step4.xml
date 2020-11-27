@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="163dp"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click để chọn"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        ></TextView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="95dp"
+        android:layout_height="90dp"
         android:paddingTop="5dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/custom_padding"
         android:weightSum="7">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

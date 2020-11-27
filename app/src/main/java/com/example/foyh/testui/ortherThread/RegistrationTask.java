@@ -55,7 +55,7 @@ public class RegistrationTask extends AsyncTask<String, Void, String>{
         jsonObject=nn;
         String data= "";
         fileDAO file=new fileDAO();
-        try {gdt.saveDataThisMonth(context);
+        try {
             jsonObject = gdt.getData(context);
         } catch (JSONException e) {
             e.printStackTrace();

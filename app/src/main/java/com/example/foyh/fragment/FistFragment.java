@@ -14,14 +14,17 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import com.example.foyh.R;
+import com.example.foyh.testui.Data.service.DataServiceMethod;
 
 import org.json.JSONArray;
 
 @SuppressLint("ValidFragment")
 public class FistFragment extends Fragment {
     View view;
+    int stt=0;
     NumberPicker np,np1;
     JSONArray data = new JSONArray();
+    DataServiceMethod dt = new DataServiceMethod();
     int[] rt = new int[2];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,11 +34,30 @@ public class FistFragment extends Fragment {
         np1 = view.findViewById(R.id.np1);
         if (stt==0){
             np.setMinValue(1);
-            np.setMaxValue(31);
-            np1.setMinValue(1);
-            np1.setMaxValue(12);
+            int[] monthD= new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            np.setMaxValue(monthD[dt.getMonth()-1]);
+            np.setValue(Integer.parseInt(dt.getDay()));
+
+
+            np1.setMinValue(dt.getMonth()-2);
+            int o=dt.getMonth()+2;
+                if (dt.getMonth()+1==13){
+                    np1.setMinValue(2);
+                    np1.setMaxValue(12);
+                }else if (dt.getMonth()+2==13){
+                    np1.setMinValue(1);
+                    np1.setMaxValue(12);
+                }else {
+                np1.setMaxValue(dt.getMonth()+2);
+            }
+
+            np1.setValue(dt.getMonth());
+
 
         }else {
+            TextView one = view.findViewById(R.id.one);
+            TextView tow = view.findViewById(R.id.tow);
+            one.setText("Từ ngày");tow.setText("Đến ngày");
             np.setMinValue(5);
             np.setMaxValue(20);
             np1.setMinValue(8);
@@ -51,6 +73,12 @@ public class FistFragment extends Fragment {
                 if (newVal==0){
                     rt[0]=1;
                 }
+                if (stt!=0){
+                    rt[0]=10;
+                    np1.setMinValue(newVal+4);
+                    np1.setMaxValue(newVal+8);
+                }
+
             }
         });
 
@@ -61,6 +89,12 @@ public class FistFragment extends Fragment {
                 if (newVal==0){
                     rt[1]=1;
                 }
+                if (stt!=0){
+                    rt[1]=15;
+                    np.setMinValue(newVal-4);
+                    np.setMaxValue(newVal-8);
+                }
+
             }
         });
         btn.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +103,7 @@ public class FistFragment extends Fragment {
                 if (stt==0) {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    SecondFragment sc = new SecondFragment();
+                    SecondFragment sc = new SecondFragment(0);
                     sc.setDt(rt[0],rt[1]);
                     fragmentTransaction.replace(R.id.frameLayout, sc);
                     Fragment fr = new QsFragment("Chu kỳ kinh nguyệt của bạn \n thường kéo dài bao lâu ?");
@@ -92,7 +126,7 @@ public class FistFragment extends Fragment {
 
         return view;
     }
-    int stt=0;
+
     public FistFragment(int stt,JSONArray data){
         this.stt=stt;
         this.data=data;

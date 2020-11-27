@@ -81,8 +81,6 @@ public class DataServiceMethod {
             JSONArray rttt = ardt1.getJSONArray(3);
             JSONArray bhday = artd1.getJSONArray("bh");
             if (dateStt != day) {
-                //put bh to bh theo ngay
-                sttvArr.put(1);
                 bhday.put(sttvArr);
             }
 
@@ -259,13 +257,14 @@ public class DataServiceMethod {
             }
 
 
-            if (day >= longMo + 15 && lm == 0) {
+            if (day >= longMo + 13 && lm == 0) {
                 lm = longMo;
                 ldt = longdt;
             }
-            if (day >= longMo + longdt + 5 && ldt == 0) {
+            if (day >= longMo + longdt + 5 && ldt == 0&& lm != 0) {
                 lm = longMo;
                 ldt = longdt;
+
             }
             if (day == dayrt[0] && rttt.getInt(0) == 0 && countrt != 0) {
                 rttt.remove(0);
@@ -303,7 +302,7 @@ public class DataServiceMethod {
                     e.printStackTrace();
                 }
                 file.saveData("statush.json", da, context);
-                new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "https://26d7fa828d97.ngrok.io/api/dudoan");
+                new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "https://c170203c61fa.ngrok.io/api/dudoan");
             }
             //conten dt,rt
 
@@ -593,6 +592,30 @@ public class DataServiceMethod {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy");
+            date = df.format(c.getTime());
+        }
+
+        return date;
+    }
+
+    public int getMonth(){
+        String date=null;
+        Calendar c = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            date = df.format(c.getTime());
+        }
+        String[] splitDate=date.split("-");
+        int month1 = Integer.parseInt(splitDate[1].trim());
+        return month1;
+    }
+    public String getDay(){
+        String date=null;
+        Calendar c = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("dd");
             date = df.format(c.getTime());
         }
 
