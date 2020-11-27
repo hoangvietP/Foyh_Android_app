@@ -1,5 +1,6 @@
 package com.example.foyh.testui.ortherThread;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -15,6 +16,7 @@ import com.example.foyh.testui.Data.classDT.fileDAO;
 import com.example.foyh.testui.Data.service.DataServiceMethod;
 import com.example.foyh.testui.Data.service.getDataMonth;
 import com.example.foyh.testui.Notification.ExampleService;
+import com.example.foyh.testui.Notification.Notifi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ public class RegistrationTask extends AsyncTask<String, Void, String>{
         this.context= context;
     }
 
+    @SuppressLint("WrongThread")
     @Override
     protected String doInBackground(String... params)  {
 
@@ -50,24 +53,32 @@ public class RegistrationTask extends AsyncTask<String, Void, String>{
             e.printStackTrace();
         }
         jsonObject=nn;
-        try {
-            gdt.saveDataThisMonth(context);
+        String data= "";
+        fileDAO file=new fileDAO();
+        try {gdt.saveDataThisMonth(context);
             jsonObject = gdt.getData(context);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        String data= "";
         while (data.equals("") || data.equals("loss")){
             data = ConnectAsynchronously.connectAsynchronously(params[0],jsonObject);
-            Log.d("data",data);
+            Log.d("data",data+"connect to server");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        try {
+             gdt.saveDataThisMonth(context);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         if (!data.equals("") || !data.equals("loss")){
             File fil = new File(context.getFilesDir(), "thisMonthData.json");
             FileWriter fileWriter = null;
@@ -79,7 +90,6 @@ public class RegistrationTask extends AsyncTask<String, Void, String>{
             } catch (IOException | NullPointerException e) {
                 e.printStackTrace();
             }
-            fileDAO file = new fileDAO();
         //getdate
             DataServiceMethod dt = new DataServiceMethod();
             String dateUpdate = dt.getDate();
@@ -116,8 +126,22 @@ public class RegistrationTask extends AsyncTask<String, Void, String>{
             } catch (NullPointerException e) {
                 e.printStackTrace();
             }
-            Intent serviceIntent= new Intent(context, ExampleService.class);
-            ContextCompat.startForegroundService(context, serviceIntent);
+
+            JSONObject k = new JSONObject();
+            try {
+                k.put("stt","1");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            JSONObject da = new JSONObject();
+            try {
+                da.put("data",k);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            file.saveData("statush.json", da, context);
+
+            new SynsDay(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"gh");
         }
         return data;
     }

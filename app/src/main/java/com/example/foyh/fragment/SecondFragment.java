@@ -1,4 +1,5 @@
 package com.example.foyh.fragment;
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -12,11 +13,20 @@ import android.widget.Toast;
 
 import com.example.foyh.R;
 
+import org.json.JSONArray;
 
+@SuppressLint("ValidFragment")
 public class SecondFragment extends Fragment {
-    View view;
-    int rt=0;
-    int k=0;
+    private View view;
+    private int rt=0;
+    private int k=1;
+    private JSONArray data = new JSONArray();
+    public void setDt(int day,int month){
+        JSONArray ar = new JSONArray();
+        ar.put(day);
+        ar.put(month);
+        data.put(ar);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         NumberPicker np;
@@ -41,8 +51,9 @@ public class SecondFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 String qs="";
+                data.put(rt);
                 switch (k){
-                    case 0: qs="Chu kỳ kinh nguyệt của bạn \n thường kéo dài bao lâu ?";
+                    case 0: qs="Mùa dâu (kỳ kinh nguyệt) của bạn \n thường kéo dài bao lâu ?";
 
                     break;
                     case 1: qs="Một chu kỳ của bạn \n thường kéo dài bao nhiêu ngày ?";
@@ -51,7 +62,7 @@ public class SecondFragment extends Fragment {
                     case 2: qs="Bạn thường rụng trứng \n  từ ngày bao nhiêu đến... ? ";
                         FragmentManager fm1 = getFragmentManager();
                         FragmentTransaction fragmentTransaction1 = fm1.beginTransaction();
-                        fragmentTransaction1.replace(R.id.frameLayout,new FistFragment(1));
+                        fragmentTransaction1.replace(R.id.frameLayout,new FistFragment(1,data));
                         fragmentTransaction1.commit();
                         break;
                 }
@@ -61,8 +72,7 @@ public class SecondFragment extends Fragment {
                 k++;
             }
         });
-
-
         return view;
     }
+
 }

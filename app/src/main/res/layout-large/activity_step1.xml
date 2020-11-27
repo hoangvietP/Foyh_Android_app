@@ -8,7 +8,7 @@
     android:paddingLeft="5dp"
     android:paddingTop="20dp"
     android:layout_height="match_parent"
-    android:background="@drawable/health_bg2"
+    android:background="@drawable/bgt"
     android:weightSum="10"
     android:gravity="right"
     android:orientation="vertical">
@@ -22,7 +22,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_weight="1"
-        app:srcCompat="@drawable/iconlogo" />
+        app:srcCompat="@drawable/quesition" />
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"

@@ -16,6 +16,8 @@ import com.example.foyh.fragment.FistFragment;
 import com.example.foyh.fragment.QsFragment;
 import com.example.foyh.fragment.SecondFragment;
 
+import org.json.JSONArray;
+
 
 public class step1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,9 @@ public class step1 extends AppCompatActivity {
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_step1);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        loadFragment( new FistFragment(0));
+
+        JSONArray data = new JSONArray();
+        loadFragment( new FistFragment(0,data));
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout1,new QsFragment("Mùa dâu gần nhấn của bạn \n bắt đầu vào ngày nào ?"));

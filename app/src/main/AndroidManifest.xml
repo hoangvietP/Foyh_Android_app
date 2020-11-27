@@ -29,7 +29,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.homeactivity" />
-        <activity android:name=".activity.startActivity" />
 
         <receiver android:name=".testui.Notification.NotiReceiver.NotificationReceiver" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc1" />

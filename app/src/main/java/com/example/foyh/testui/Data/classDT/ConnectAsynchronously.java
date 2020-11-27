@@ -31,6 +31,7 @@ public class ConnectAsynchronously {
             urlConnection.setRequestProperty("Accept", "application/json");
             urlConnection.setRequestMethod("POST");
             urlConnection.connect();
+
             //Write
             OutputStream outputStream = urlConnection.getOutputStream();
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
@@ -56,6 +57,7 @@ public class ConnectAsynchronously {
                 bufferedReader.close();
                 result = sb.toString();
             }
+            urlConnection.disconnect();
         } catch (FileNotFoundException  e) {
             e.printStackTrace();
             result="loss";
@@ -72,6 +74,8 @@ public class ConnectAsynchronously {
             e.printStackTrace();
             result="loss";
         }
+
+
         return result;
     }
 

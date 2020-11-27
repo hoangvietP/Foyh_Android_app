@@ -5,12 +5,16 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import android.app.Notification;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.foyh.R;
 import com.example.foyh.testui.Data.classDT.fileDAO;
@@ -25,6 +29,7 @@ import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
     TextView test;
+    Context context = this;    boolean us = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,26 +39,28 @@ public class MainActivity extends AppCompatActivity {
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        fileDAO file= new fileDAO();
 
-//        fileDAO file= new fileDAO();
-//        boolean us = true;
-//        try {
-//            file.getDataOB("thisMonthData.json",this);
-//        }catch (FileNotFoundException | JSONException e){
-//            // run start activity
-//            us=false;
-////            Intent intent = new Intent(MainActivity.this, startActivity.class);
-////            startActivity(intent);
-//        }
-//        if (us==true){
-//            Intent intent = new Intent(MainActivity.this, step1.class);
-//            startActivity(intent);
-//        }else if(us==false){
-//            Intent intent = new Intent(MainActivity.this, step1.class);
-//            startActivity(intent);
-//        }
+        new CountDownTimer(2000, 100) {
+                public void onTick(long millisUntilFinished) {
 
-        Intent intent = new Intent(MainActivity.this, step1.class);
-        startActivity(intent);
+                }
+                public void onFinish() {
+                    Thread.currentThread();
+                    try {
+                        file.getDataOB("thisMonthData.json",context);
+                    }catch (FileNotFoundException | JSONException e){
+                        us=false;
+                    }
+                    if (us==true){
+                        new SynsDay(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"gh");
+                    }else if(us==false){
+                        Intent intent = new Intent(MainActivity.this, step1.class);
+                        startActivity(intent);
+                    }
+                }
+            }.start();
+
+
     }
 }

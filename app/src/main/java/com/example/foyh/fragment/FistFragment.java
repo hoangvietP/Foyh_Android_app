@@ -15,10 +15,13 @@ import android.widget.TextView;
 
 import com.example.foyh.R;
 
+import org.json.JSONArray;
+
 @SuppressLint("ValidFragment")
 public class FistFragment extends Fragment {
     View view;
     NumberPicker np,np1;
+    JSONArray data = new JSONArray();
     int[] rt = new int[2];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -66,15 +69,21 @@ public class FistFragment extends Fragment {
                 if (stt==0) {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new SecondFragment());
+                    SecondFragment sc = new SecondFragment();
+                    sc.setDt(rt[0],rt[1]);
+                    fragmentTransaction.replace(R.id.frameLayout, sc);
                     Fragment fr = new QsFragment("Chu kỳ kinh nguyệt của bạn \n thường kéo dài bao lâu ?");
                     fragmentTransaction.replace(R.id.frameLayout1, fr);
                     fragmentTransaction.commit();
                 }else {
+                    JSONArray rtt = new JSONArray();
+                    rtt.put(rt[0]);
+                    rtt.put(rt[1]);
+                    data.put(rtt);
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new BhFragment());
-                    Fragment fr = new QsFragment("Hãy chọn 3 biểu hiện gần\n chu kỳ kinh nguyệt của bạn");
+                    fragmentTransaction.replace(R.id.frameLayout, new BhFragment(data));
+                    Fragment fr = new QsFragment("Hãy chọn các biểu hiện \n gần mùa dâu (đến tháng)\n thường thấy của bạn");
                     fragmentTransaction.replace(R.id.frameLayout1, fr);
                     fragmentTransaction.commit();
                 }
@@ -84,7 +93,8 @@ public class FistFragment extends Fragment {
         return view;
     }
     int stt=0;
-    public FistFragment(int stt){
+    public FistFragment(int stt,JSONArray data){
         this.stt=stt;
+        this.data=data;
     }
 }

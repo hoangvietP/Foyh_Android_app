@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 import com.example.foyh.R;
 
+import org.json.JSONArray;
+
 @SuppressLint("ValidFragment")
 public class QsFragment extends Fragment {
     View view;
     String qs="";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         NumberPicker np;

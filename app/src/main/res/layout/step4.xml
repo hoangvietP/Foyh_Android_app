@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="163dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="95dp"
         android:paddingTop="5dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/custom_padding"
         android:weightSum="7">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
             android:weightSum="2"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded"
+                android:id="@+id/nm"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -34,7 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Đau đầu"
+                android:textColor="@android:color/white"
+                android:text="Nổi mụn"
                 android:textSize="8sp" />
 
         </LinearLayout>
@@ -48,7 +50,7 @@
 
             <ImageView
 
-                android:id="@+id/image_view_expanded1"
+                android:id="@+id/mm"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -60,19 +62,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mụn"
+                android:textColor="@android:color/white"
+                android:text="Mệt mỏi"
                 android:textSize="8sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
             android:weightSum="2"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded2"
+                android:id="@+id/ca"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -84,7 +87,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mệt mỏi"
+                android:textColor="@android:color/white"
+                android:text="Chán ăn"
                 android:textSize="8sp" />
 
         </LinearLayout>
@@ -97,11 +101,11 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded3"
+                android:id="@+id/db"
                 android:layout_weight="1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/icnotification7"
+                app:srcCompat="@drawable/icnotification10"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -109,7 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tức ngực"
+                android:textColor="@android:color/white"
+                android:text="Đau bụng"
                 android:textSize="8sp" />
 
         </LinearLayout>
@@ -117,13 +122,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
             android:weightSum="2"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded4"
+                android:id="@+id/tn"
                 android:layout_weight="1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -135,20 +140,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ngứa"
+                android:textColor="@android:color/white"
+                android:text="Đau, tức ngực"
                 android:textSize="8sp" />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
             android:weightSum="2"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded5"
+                android:id="@+id/dl"
                 android:layout_weight="1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -160,7 +166,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Táo bón"
+                android:textColor="@android:color/white"
+                android:text="Đau lưng"
                 android:textSize="8sp" />
 
         </LinearLayout>
@@ -168,13 +175,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
             android:weightSum="2"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/image_view_expanded6"
+                android:id="@+id/dcl"
                 android:layout_weight="1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -187,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@android:color/white"
                 android:text="Dịch lạ"
                 android:textSize="8sp" />
 
