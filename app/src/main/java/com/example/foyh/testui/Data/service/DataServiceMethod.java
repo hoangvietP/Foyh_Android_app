@@ -39,6 +39,7 @@ public class DataServiceMethod {
             file.saveData("dateStatus.json",dd,context);
         }
         int dateStt= dateStatus.getInt("d");
+
         String conten="";
         JSONArray sttArr=new JSONArray();
         JSONArray sttvArr=new JSONArray();
@@ -68,7 +69,7 @@ public class DataServiceMethod {
         JSONArray trt = ard.getJSONArray(4);
         int[] dayrt= {trt.getInt(0),trt.getInt(1)};
 
-
+        Log.d("dateStt",dateStt+"/"+day);
         //set get data this month
 
         //lay bh trong ngay
@@ -84,9 +85,7 @@ public class DataServiceMethod {
                 bhday.put(sttvArr);
             }
 
-//        JSONArray bh = bhday.getJSONArray(bhday.length()-1);
             JSONArray bh = sttvArr;
-
             try {
                 bh.getInt(0);
             } catch (JSONException i) {
@@ -308,7 +307,7 @@ public class DataServiceMethod {
 
 
             if (day < dayrt[0]) {
-                conten = "Rụng trứng: " + dateSetup(dateUpdate, dayrt[0]) + " - " + dateSetup(dateUpdate, dayrt[1]);
+                conten = "Ngày thứ: "+ day+"  |  Rụng trứng: " + dateSetup(dateUpdate, dayrt[0]) + " - " + dateSetup(dateUpdate, dayrt[1]);
                 //them bh rt
                 JSONArray sttDt = new JSONArray();
                 sttDt.put(0);
@@ -320,7 +319,7 @@ public class DataServiceMethod {
                 sttDt.put(6);
                 sttArr = sttDt;
             } else if (day >= dayrt[0] && day <= dayrt[1]) {
-                conten = "Rụng trứng ngày thứ: " + String.valueOf(day - dayrt[0] + 1);
+                conten = "Ngày thứ: "+ day+"  |  Rụng trứng ngày thứ: " + String.valueOf(day - dayrt[0] + 1);
                 JSONArray sttDt = new JSONArray();
                 sttDt.put(0);
                 sttDt.put(1);
@@ -331,7 +330,7 @@ public class DataServiceMethod {
                 sttDt.put(6);
                 sttArr = sttDt;
             } else if (day > dayrt[1] && day <= longMo && lm == 0) {
-                conten = "Kỳ hành kinh: " + dateSetup(dateUpdate, longMo) + " - " + dateSetup(dateUpdate, longMo + longdt);
+                conten ="Ngày thứ: "+ day+ "  |  Kỳ hành kinh: " + dateSetup(dateUpdate, longMo) + " - " + dateSetup(dateUpdate, longMo + longdt);
                 // bhdt
                 JSONArray sttDt = new JSONArray();
                 sttDt.put(0);
@@ -392,8 +391,8 @@ public class DataServiceMethod {
 
 
         //date up date
-//        int day=getCountDay(dateUpdate);
-        int day = da+1;
+        int day=getCountDay(dateUpdate);
+//        int day = da+1;
         dtm.put(day);
         dtm.put(nameMo);
         dtm.put(longMo);
@@ -415,7 +414,7 @@ public class DataServiceMethod {
         file.saveData("thisMonthData.json",data,context);
         JSONObject d = new JSONObject();
         JSONObject dd= new JSONObject();
-        d.put("d",day-1);
+        d.put("d",day);
         dd.put("dd",d);
         file.saveData("dateStatus.json",dd,context);
         Log.d("this month data line457 DataServiceMethod",data.toString());

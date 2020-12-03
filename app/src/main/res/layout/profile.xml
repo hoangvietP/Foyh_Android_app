@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/bgt"
+    android:gravity="center|top">
+    <TextView
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="30sp"
+        android:text="Thông Tin Cá Nhân"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"></TextView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:onClick="openImage"
+            android:src="@drawable/prf"
+            android:id="@+id/imganh"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"></ImageView>
+
+    </LinearLayout>
+
+    <EditText
+        android:hint="   Họ Và Tên"
+        android:layout_marginTop="10dp"
+        android:id="@+id/addName"
+        android:background="@drawable/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></EditText>
+
+    <EditText
+        android:inputType="date"
+        android:hint="   Sinh Nhật"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></EditText>
+
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:onClick="add"
+            android:layout_weight="1"
+            android:id="@+id/btnAddToList"
+            android:text="Lưu"
+             android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+
+        <TextView
+
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:onClick="cancel"
+            android:layout_weight="1"
+            android:id="@+id/btnCancel"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Hủy"
+            android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -31,10 +32,9 @@ public class step1 extends AppCompatActivity {
 
         JSONArray data = new JSONArray();
         loadFragment( new FistFragment(0,data));
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout1,new QsFragment("Mùa dâu gần nhấn của bạn \n bắt đầu vào ngày nào ?"));
-        fragmentTransaction.commit(); // save the changes
+
+
+ // save the changes
 
     }
 

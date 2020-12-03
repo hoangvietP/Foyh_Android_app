@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:gravity="center"
     >
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click để chọn"
-        android:textSize="14sp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/custom_input"
+        >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Click để chọn biểu hiện, triệu trứng trong ngày"
+        android:textSize="10sp"
+        android:gravity="center"
         android:textColor="@android:color/white"
+        android:paddingBottom="5dp"
         ></TextView>
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:paddingTop="5dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:background="@drawable/custom_padding"
+
         android:weightSum="7">
 
         <LinearLayout
@@ -32,8 +42,8 @@
 
             <ImageView
                 android:id="@+id/nm"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/icnotification1" />
@@ -59,8 +69,8 @@
             <ImageView
 
                 android:id="@+id/mm"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/icnotification2"
                 android:scaleType="centerCrop" />
@@ -84,8 +94,8 @@
 
             <ImageView
                 android:id="@+id/ca"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/icnotification4"
                 android:scaleType="centerCrop" />
@@ -111,8 +121,8 @@
             <ImageView
                 android:id="@+id/db"
                 android:layout_weight="1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 app:srcCompat="@drawable/icnotification10"
                 android:scaleType="centerCrop" />
 
@@ -138,8 +148,8 @@
             <ImageView
                 android:id="@+id/tn"
                 android:layout_weight="1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 app:srcCompat="@drawable/icnotification8"
                 android:scaleType="centerCrop" />
 
@@ -164,8 +174,8 @@
             <ImageView
                 android:id="@+id/dl"
                 android:layout_weight="1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 app:srcCompat="@drawable/icnotification6"
                 android:scaleType="centerCrop" />
 
@@ -191,8 +201,8 @@
             <ImageView
                 android:id="@+id/dcl"
                 android:layout_weight="1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 app:srcCompat="@drawable/icnotification9"
                 android:scaleType="centerCrop"
                 />
@@ -209,34 +219,17 @@
         </LinearLayout>
 
     </LinearLayout>
+    </LinearLayout>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_weight="1"
-        ></TextView>
-    <Button
-        android:layout_weight="1"
-        android:id="@+id/next_button1"
         android:layout_width="match_parent"
-        android:text="Tiếp Theo"
-        android:layout_height="50dp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_blue_dark"
-        android:onClick="setQuessiton"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_weight="1"
-        ></TextView>
+        android:layout_height="15dp"/>
     <Button
-        android:layout_weight="1"
-        android:id="@+id/pre_button"
-        android:layout_width="match_parent"
-        android:text="Quay Lại"
-        android:layout_height="50dp"
+        android:id="@+id/cnbh"
+        android:layout_width="160dp"
+        android:text="Cập nhật biểu hiện"
+        android:layout_height="40dp"
         android:textColor="@android:color/white"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/custom_input"
         android:onClick="setQuessiton"
         />
 </LinearLayout>

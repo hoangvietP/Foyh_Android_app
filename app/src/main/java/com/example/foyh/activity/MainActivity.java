@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (us==true){
                         new SynsDay(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"gh");
+                        Intent intent = new Intent(MainActivity.this, User.class);
+                        startActivity(intent);
                     }else if(us==false){
                         Intent intent = new Intent(MainActivity.this, step1.class);
                         startActivity(intent);

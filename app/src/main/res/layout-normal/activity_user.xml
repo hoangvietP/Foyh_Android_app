@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgt"
+    android:weightSum="20"
+    android:paddingTop="30dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="vertical"
+    tools:context=".activity.User">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/prf"
+            android:layout_width="30dp"
+            android:background="@drawable/padding"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/prf" />
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:background="@drawable/paddingbg"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/home" />
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/cld"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/padding"
+            app:srcCompat="@drawable/calendar" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:weightSum="8"
+android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/imageView10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/preicon" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="260dp"
+            android:layout_height="370dp"
+            android:layout_gravity="center"
+            android:weightSum="4"
+            android:orientation="vertical"
+            android:background="@drawable/custom_input">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="02-12-2020"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"></TextView>
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Ngày thứ: 20"
+                android:textColor="@android:color/white"
+                android:textSize="14sp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/whiteline"
+                android:textColor="@android:color/white"
+                android:textSize="14sp">
+            </TextView>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Dự Đoán"
+            android:textColor="@android:color/white"
+            android:textSize="24sp">
+        </TextView>
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/piechart"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:paddingBottom="5dp"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/pre"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nexticon" />
+            <TextView
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Chi tiết"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:id="@+id/framebh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
