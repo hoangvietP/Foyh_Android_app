@@ -48,7 +48,7 @@ public class DataServiceMethod {
             sttArr= objstt.getJSONArray("stt");
             sttvArr= objstt.getJSONArray("sttv");
         }catch (FileNotFoundException d){
-            saveStt(context,sttArr,sttvArr,"null");
+            saveStt(context,sttArr,sttvArr,"null","");
         }
 
         int dayst=0;
@@ -79,9 +79,9 @@ public class DataServiceMethod {
         JSONArray ardt1= artd1.getJSONArray("dataday");
         int lm= ardt1.getInt(1);
         int ldt= ardt1.getInt(2);
-            JSONArray rttt = ardt1.getJSONArray(3);
+        JSONArray rttt = ardt1.getJSONArray(3);
             JSONArray bhday = artd1.getJSONArray("bh");
-            if (dateStt != day) {
+            if (dateStt == getCountDay(dateUpdate)) {
                 bhday.put(sttvArr);
             }
 
@@ -301,13 +301,28 @@ public class DataServiceMethod {
                     e.printStackTrace();
                 }
                 file.saveData("statush.json", da, context);
-                new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "https://c170203c61fa.ngrok.io/api/dudoan");
+                new RegistrationTask(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "https://c83ad04d6fb2.ngrok.io/api/dudoan");
             }
             //conten dt,rt
-
-
-            if (day < dayrt[0]) {
-                conten = "Ngày thứ: "+ day+"  |  Rụng trứng: " + dateSetup(dateUpdate, dayrt[0]) + " - " + dateSetup(dateUpdate, dayrt[1]);
+        String nn="";
+        if (day < dayrt[0]-5) {
+            conten = "Rụng trứng: " + dateSetup(dateUpdate, dayrt[0]) + " - " + dateSetup(dateUpdate, dayrt[1]);
+            nn="Ngày an toàn";
+            //them bh rt
+            JSONArray sttDt = new JSONArray();
+            sttDt.put(0);
+            sttDt.put(1);
+            sttDt.put(2);
+            sttDt.put(3);
+            sttDt.put(4);
+            sttDt.put(5);
+            sttDt.put(6);
+            sttDt.put(7);
+            sttDt.put(8);
+            sttDt.put(9);
+            sttArr = sttDt;
+        }else if ( day> dayrt[0]-5 && day < dayrt[0]) {
+                conten = "Rụng trứng: " + dateSetup(dateUpdate, dayrt[0]) + " - " + dateSetup(dateUpdate, dayrt[1]);nn="Ngày không an toàn";
                 //them bh rt
                 JSONArray sttDt = new JSONArray();
                 sttDt.put(0);
@@ -317,9 +332,12 @@ public class DataServiceMethod {
                 sttDt.put(4);
                 sttDt.put(5);
                 sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
                 sttArr = sttDt;
-            } else if (day >= dayrt[0] && day <= dayrt[1]) {
-                conten = "Ngày thứ: "+ day+"  |  Rụng trứng ngày thứ: " + String.valueOf(day - dayrt[0] + 1);
+            }else if (day >= dayrt[0] && day <= dayrt[1]) {
+                conten = "Rụng trứng ngày thứ: " + String.valueOf(day - dayrt[0] + 1);nn="Ngày không an toàn";
                 JSONArray sttDt = new JSONArray();
                 sttDt.put(0);
                 sttDt.put(1);
@@ -328,40 +346,52 @@ public class DataServiceMethod {
                 sttDt.put(4);
                 sttDt.put(5);
                 sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
                 sttArr = sttDt;
-            } else if (day > dayrt[1] && day <= longMo && lm == 0) {
-                conten ="Ngày thứ: "+ day+ "  |  Kỳ hành kinh: " + dateSetup(dateUpdate, longMo) + " - " + dateSetup(dateUpdate, longMo + longdt);
+            }else if (day > dayrt[1] && day <= longMo && lm == 0) {
+                conten ="Kỳ hành kinh: " + dateSetup(dateUpdate, longMo) + " - " + dateSetup(dateUpdate, longMo + longdt);nn="Ngày an toàn!";
                 // bhdt
                 JSONArray sttDt = new JSONArray();
-                sttDt.put(0);
-                sttDt.put(1);
-                sttDt.put(2);
-                sttDt.put(3);
-                sttDt.put(4);
-                sttDt.put(5);
                 sttDt.put(12);
-                sttArr = sttDt;
-            } else if (day < lm + longdt +5 && day >= lm && lm != 0) {
-                conten = "Hành kinh ngày: " + String.valueOf(day - lm + 1);
-                JSONArray sttDt = new JSONArray();
-                sttDt.put(0);
                 sttDt.put(1);
                 sttDt.put(2);
                 sttDt.put(3);
                 sttDt.put(4);
                 sttDt.put(5);
-                sttDt.put(13);
+                sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
                 sttArr = sttDt;
-            } else if (day>longMo &&ldt==0 && lm == 0 && day<longMo+7){
+            }else if (day < lm + longdt +5 && day >= lm && lm != 0) {
+                conten = "Hành kinh ngày: " + String.valueOf(day - lm + 1);nn="Nhớ chú ý BVS!";
+                JSONArray sttDt = new JSONArray();
+                sttDt.put(13);
+                sttDt.put(1);
+                sttDt.put(2);
+                sttDt.put(3);
+                sttDt.put(4);
+                sttDt.put(5);
+                sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
+                sttArr = sttDt;
+            }else if (day>longMo &&ldt==0 && lm == 0 && day<longMo+7){
                 conten = "Kỳ hành kinh có thể đến trong vài ngày tới";
                 JSONArray sttDt = new JSONArray();
-                sttDt.put(0);
+                sttDt.put(12);
                 sttDt.put(1);
                 sttDt.put(2);
                 sttDt.put(3);
                 sttDt.put(4);
                 sttDt.put(5);
-                sttDt.put(12);
+                sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
                 sttArr = sttDt;
             }else if (ldt!=0 && lm != 0){
                 conten = "Hãy bật kết nối mạng";
@@ -372,16 +402,18 @@ public class DataServiceMethod {
                 sttDt.put(3);
                 sttDt.put(4);
                 sttDt.put(5);
-                sttDt.put(12);
+                sttDt.put(6);
+                sttDt.put(7);
+                sttDt.put(8);
+                sttDt.put(9);
                 sttArr = sttDt;
             }
             //if on next day => reset sttvstt
-            if (dateStt != day) {
+            if (dateStt == getCountDay(dateUpdate)) {
                 JSONArray bhh = new JSONArray();
                 sttvArr = bhh;
-
             }
-        saveStt(context,sttArr,sttvArr,conten);
+        saveStt(context,sttArr,sttvArr,conten,nn);
         return conten;
     }
     @SuppressLint("LongLogTag")
@@ -414,7 +446,7 @@ public class DataServiceMethod {
         file.saveData("thisMonthData.json",data,context);
         JSONObject d = new JSONObject();
         JSONObject dd= new JSONObject();
-        d.put("d",day);
+        d.put("d",day+1);
         dd.put("dd",d);
         file.saveData("dateStatus.json",dd,context);
         Log.d("this month data line457 DataServiceMethod",data.toString());
@@ -442,11 +474,12 @@ public class DataServiceMethod {
         file.saveData("monthData.json",obb,context);
         Log.d("month data",obb.toString());
     }
-    public void saveStt(Context context, JSONArray stt, JSONArray sttv, String st) throws JSONException {
+    public void saveStt(Context context, JSONArray stt, JSONArray sttv, String st,String nn) throws JSONException {
         JSONObject obb1= new JSONObject();
         obb1.put("stt",stt);
         obb1.put("sttv",sttv);
         obb1.put("st",st);
+        obb1.put("nn",nn);
         JSONObject obb= new JSONObject();
         obb.put("data",obb1);
         fileDAO file = new fileDAO();
@@ -474,6 +507,7 @@ public class DataServiceMethod {
         int daycl=d-day;
         if (daycl>=lg){
             rt= String.valueOf(day+lg)+"/"+month;
+            return rt;
         }
         if (daycl<lg &&  month==12){
             int cl = lg-daycl;
@@ -489,7 +523,7 @@ public class DataServiceMethod {
                 int c= cl-d1;
                 rt= String.valueOf(c)+"/"+ 2;
             }
-        } if (daycl<lg &&  month==11){
+        }else if (daycl<lg &&  month==11){
             int cl = lg-daycl;
             if (cl==0){
                 cl=1;
@@ -524,13 +558,11 @@ public class DataServiceMethod {
         //get date now
         int day=1;
         String formattedDate = null;
-        Calendar c = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            c = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            formattedDate = df.format(c.getTime());
+        java.util.Calendar c = null;
+        c = java.util.Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        formattedDate = df.format(c.getTime());
 
-        }
         String[] splitDate=formattedDate.split("-");
 //        String testdate="2020-12-1";
 //        String[] splitDate=testdate.split("-");
@@ -539,6 +571,7 @@ public class DataServiceMethod {
         int day1 = Integer.parseInt(splitDate[2].trim());
         int[] monthD= new int[12];
         if (year==year1){
+
             if (year1%4==0){
                 monthD= new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
             }else {
@@ -569,10 +602,9 @@ public class DataServiceMethod {
                 int dayfm1 = monthD[10]-dayc+monthD[11];
                 day=day1+dayfm1;
             }else {
-                Log.d("Error"," get date for stt Notificatio at DataServiceMothod");
             }
         }
-        return day;
+        return day+1;
     }
     public String getDate(){
         String date=null;
@@ -607,6 +639,42 @@ public class DataServiceMethod {
         }
         String[] splitDate=date.split("-");
         int month1 = Integer.parseInt(splitDate[1].trim());
+        return month1;
+    }
+    public int getH(){
+        String date=null;
+        Calendar c = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("HH");
+            date = df.format(c.getTime());
+        }
+        String[] splitDate=date.split("-");
+        int month1 = Integer.parseInt(splitDate[0].trim());
+        return month1;
+    }
+    public int getM(){
+        String date=null;
+        Calendar c = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("mm");
+            date = df.format(c.getTime());
+        }
+        String[] splitDate=date.split("-");
+        int month1 = Integer.parseInt(splitDate[0].trim());
+        return month1;
+    }
+    public int getS(){
+        String date=null;
+        Calendar c = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("ss");
+            date = df.format(c.getTime());
+        }
+        String[] splitDate=date.split("-");
+        int month1 = Integer.parseInt(splitDate[0].trim());
         return month1;
     }
     public String getDay(){

@@ -5,17 +5,17 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.User">
 
-        </activity>
+        <activity android:name=".activity.User"></activity>
         <activity
             android:name=".activity.step1"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -26,12 +26,13 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.homeactivity">
-        </activity>
-        <activity android:name=".activity.profileActivity"/>
+        <activity android:name=".activity.homeactivity"></activity>
+        <activity android:name=".activity.profileActivity" />
+
         <receiver android:name=".testui.Notification.NotiReceiver.NotificationReceiver" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc1" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc2" />
@@ -39,6 +40,9 @@
         <receiver android:name=".testui.Notification.NotiReceiver.rc4" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc5" />
         <receiver android:name=".testui.Notification.NotiReceiver.rc6" />
+        <receiver android:name=".testui.Notification.NotiReceiver.rc7" />
+        <receiver android:name=".testui.Notification.NotiReceiver.rc8" />
+        <receiver android:name=".testui.Notification.NotiReceiver.rc9" />
     </application>
 
 </manifest>

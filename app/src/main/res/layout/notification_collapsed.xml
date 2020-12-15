@@ -5,32 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:paddingTop="5dp"
+    android:background="@color/colorPink"
     android:gravity="top|center"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/text_view_collapsed_1"
-        style="@style/TextAppearance.Compat.Notification.Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chu kì mới: 30/9 - 7/10"
-        android:textColor="@color/colorPrimary" />
 
-    <TextView
-        android:id="@+id/text_view_collapsed_2"
-        style="@style/TextAppearance.Compat.Notification.Info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="2dp"
-        android:text="Kéo xuống để thêm biểu hiện"
-        android:textColor="@color/colorPrimary"
-        android:textSize="8sp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_down"
-        style="@style/TextAppearance.Compat.Notification.Title"
-        tools:ignore="VectorDrawableCompat" />
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/padding"
+        >
+        <TextView
+            android:id="@+id/text_view_collapsed_1"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fffff"/>
+        <TextView
+            android:id="@+id/nn"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fffff"/>
+        <TextView
+            android:id="@+id/text_view_collapsed_2"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:text="Vuốt xuống để thêm biểu hiện"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+    </LinearLayout>
 
 </LinearLayout>

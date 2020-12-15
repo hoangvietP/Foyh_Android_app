@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/custom_input"
-        >
 
     <TextView
         android:layout_width="match_parent"
@@ -23,213 +16,312 @@
         android:textColor="@android:color/white"
         android:paddingBottom="5dp"
         ></TextView>
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-
-        android:weightSum="7">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="140dp"
+            android:id="@+id/linear1"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+            android:layout_weight="7"
+            >
 
-            <ImageView
-                android:id="@+id/nm"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/icnotification1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:paddingTop="5dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/tv00"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Nổi mụn"
-                android:textSize="8sp" />
+                    <ImageView
+                        android:id="@+id/image_view_expanded1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/icnotification111"
+                        android:scaleType="centerCrop"></ImageView>
+                    <TextView
+                        android:id="@+id/tv00"
+                        android:textColor="@android:color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tôi ổn"
+                        android:textSize="8sp" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center|top"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-            <ImageView
+                    <ImageView
 
-                android:id="@+id/mm"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icnotification2"
-                android:scaleType="centerCrop" />
+                        android:id="@+id/image_view_expanded2"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/icnotification110"
+                        android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/tv01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Mệt mỏi"
-                android:textSize="8sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/tv01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/white"
+                        android:text="Cáu giận"
+                        android:textSize="8sp" />
+                </LinearLayout>
 
-            <ImageView
-                android:id="@+id/ca"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icnotification4"
-                android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/tv02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Chán ăn"
-                android:textSize="8sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center|top"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/image_view_expanded3"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/icnotification4"
+                        android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/db"
-                android:layout_weight="1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/icnotification10"
-                android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/tv02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Chán ăn"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
 
-            <TextView
-                android:id="@+id/tv03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Đau bụng"
-                android:textSize="8sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image_view_expanded4"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification2"
+                        android:scaleType="centerCrop" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/tv03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mệt mỏi"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
 
-            <ImageView
-                android:id="@+id/tn"
-                android:layout_weight="1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/icnotification8"
-                android:scaleType="centerCrop" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Đau, tức ngực"
-                android:textSize="8sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/image_view_expanded5"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification5"
+                        android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/dl"
-                android:layout_weight="1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/icnotification6"
-                android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/tv04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mất ngủ"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
 
-            <TextView
-                android:id="@+id/tv05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Đau lưng"
-                android:textSize="8sp" />
+                </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:paddingTop="5dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/dcl"
-                android:layout_weight="1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/icnotification9"
-                android:scaleType="centerCrop"
-                />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/tv06"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:text="Dịch lạ"
-                android:textSize="8sp" />
+                    <ImageView
+                        android:id="@+id/image_view_expanded6"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/icnotification7"
+                        android:scaleType="centerCrop" />
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Buồn"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
 
-    </LinearLayout>
-    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_view_expanded7"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification6"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Đau lưng"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_view_expanded8"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification10"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Đau bụng, dưới"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_view_expanded9"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification1"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nổi mụn"
+                        android:textColor="@android:color/white"
+                        android:textSize="8sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_view_expanded10"
+                        android:layout_weight="1"
+                        android:layout_width="45dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/icnotification8"
+                        android:scaleType="centerCrop"
+                        />
+                    <TextView
+                        android:id="@+id/tv09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/white"
+                        android:text="Tức ngực"
+                        android:textSize="8sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="15dp"/>
-    <Button
-        android:id="@+id/cnbh"
-        android:layout_width="160dp"
-        android:text="Cập nhật biểu hiện"
-        android:layout_height="40dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/custom_input"
-        android:onClick="setQuessiton"
-        />
+        android:layout_height="5dp"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="40dp">
+                <Button
+                    android:id="@+id/cnbh"
+                    android:layout_width="160dp"
+                    android:text="Cập nhật biểu hiện"
+                    android:layout_height="40dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/custom_input"
+                    android:onClick="setQuessiton"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>
 </LinearLayout>

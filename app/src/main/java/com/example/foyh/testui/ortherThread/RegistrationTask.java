@@ -33,8 +33,6 @@ import java.net.HttpURLConnection;
 public class RegistrationTask extends AsyncTask<String, Void, String>{
     private Context context;
 
-    Boolean internet = true;
-    Boolean server = true;
     public RegistrationTask(Context context){
         this.context= context;
     }

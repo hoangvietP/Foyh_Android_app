@@ -41,34 +41,16 @@ import static com.example.foyh.testui.Notification.Notifi.CHANNEL_ID;
 
 public class threadXl extends Thread {
     Context context;
-    ImageView img;
     public threadXl(Context context){
         this.context=context;
     }
+        public void realtimeSt() throws InterruptedException {
+            while (true){
+                Log.d("count","ok");
+                Thread.sleep(2000);
+            }
+        }
 
-    Intent serviceIntent;
-    int k1=3;
-
-//        public void realtimeSt(ArrayList<Integer> stt){
-//            ((Notifi) context.getApplicationContext()).setNoti(stt);
-//            serviceIntent= new Intent(context, ExampleService.class);
-//            new CountDownTimer(3000, 100) {
-//                public void onTick(long millisUntilFinished) {
-//                    ArrayList<Integer> nt = new ArrayList<Integer>();
-//                    nt = ((Notifi) context.getApplicationContext()).getNoti();
-//                    int k = nt.get(0);
-//                    if (k != k1) {
-//                        ContextCompat.startForegroundService(context, serviceIntent);
-//                    }
-//                    k1 = k;
-//                }
-//                public void onFinish() {
-//                    Thread.currentThread();
-//                }
-//            }.start();
-//        }
-
-    Notification notification;
 
 
    }

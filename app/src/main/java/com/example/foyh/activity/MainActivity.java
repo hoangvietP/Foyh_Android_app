@@ -1,30 +1,25 @@
 package com.example.foyh.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.foyh.R;
 import com.example.foyh.testui.Data.classDT.fileDAO;
+import com.example.foyh.testui.Data.service.DataServiceMethod;
 import com.example.foyh.testui.Notification.ExampleService;
-import com.example.foyh.testui.ortherThread.RegistrationTask;
 import com.example.foyh.testui.ortherThread.SynsDay;
-import com.example.foyh.testui.ortherThread.threadXl;
 
 import org.json.JSONException;
-import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         fileDAO file= new fileDAO();
-
         new CountDownTimer(2000, 100) {
                 public void onTick(long millisUntilFinished) {
 
@@ -53,7 +47,15 @@ public class MainActivity extends AppCompatActivity {
                         us=false;
                     }
                     if (us==true){
-                        new SynsDay(context).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"gh");
+                        try {
+                            new DataServiceMethod().testData(context,0);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        Intent serviceIntent= new Intent(context, ExampleService.class);
+                        ContextCompat.startForegroundService(context, serviceIntent);
                         Intent intent = new Intent(MainActivity.this, User.class);
                         startActivity(intent);
                     }else if(us==false){

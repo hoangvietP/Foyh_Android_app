@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:Android="http://schemas.Android.com/apk/res/Android"
+    tools:ignore="NamespaceTypo">
+    <solid Android:color="#FFFFFF"/>
+    <stroke Android:width="3dp" Android:color="#B1BCBE" />
+    <corners Android:radius="10dp"/>
+    <padding Android:left="0dp" Android:top="0dp" Android:right="0dp" Android:bottom="0dp" />
+</shape>

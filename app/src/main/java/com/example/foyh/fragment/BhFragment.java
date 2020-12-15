@@ -33,7 +33,7 @@ import org.json.JSONException;
 @SuppressLint("ValidFragment")
 public class BhFragment extends Fragment {
     View view;
-    int[] viewbh = {0,0,0,0,0,0,0};
+    int[] viewbh = {114,114,114,114,114,114,114,114,114,114};
     JSONArray data= new JSONArray();
 
     private Context mContext;
@@ -49,15 +49,18 @@ public class BhFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.step4, container, false);
-        ImageView nm,dl,dcl,tn,ca,mm,db;
+        ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9,img10;
         Button btn = this.view.findViewById(R.id.next_button1);
-        nm =  this.view.findViewById(R.id.nm);
-        dl =  this.view.findViewById(R.id.dl);
-        dcl =  this.view.findViewById(R.id.dcl);
-        tn =  this.view.findViewById(R.id.tn);
-        ca =  this.view.findViewById(R.id.ca);
-        db =  this.view.findViewById(R.id.db);
-        mm =  this.view.findViewById(R.id.mm);
+        img1 =  this.view.findViewById(R.id.image_view_expanded1);
+        img2 =  this.view.findViewById(R.id.image_view_expanded2);
+        img3 =  this.view.findViewById(R.id.image_view_expanded3);
+        img4 =  this.view.findViewById(R.id.image_view_expanded4);
+        img5 =  this.view.findViewById(R.id.image_view_expanded5);
+        img6 =  this.view.findViewById(R.id.image_view_expanded6);
+        img7 =  this.view.findViewById(R.id.image_view_expanded7);
+        img8 =  this.view.findViewById(R.id.image_view_expanded8);
+        img9 =  this.view.findViewById(R.id.image_view_expanded9);
+        img10 =  this.view.findViewById(R.id.image_view_expanded10);
 
         Button btnPre = view.findViewById(R.id.pre_button);
         LinearLayout li = view.findViewById(R.id.linear1);
@@ -84,90 +87,127 @@ public class BhFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         }.start();
-        nm.setOnClickListener(new View.OnClickListener() {
+        img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[0]==0) {
-                    nm.setImageResource(R.drawable.iconclick6);
+                if (viewbh[0]==114) {
+                    img1.setImageResource(R.drawable.iconclick111);
                     viewbh[0]=1;
                 }else {
-                    nm.setImageResource(R.drawable.icnotification1);
-                    viewbh[0]=0;
+                    img1.setImageResource(R.drawable.icnotification111);
+                    viewbh[0]=114;
                 }
             }
         });
-        db.setOnClickListener(new View.OnClickListener() {
+        img2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[1]==0) {
-                    db.setImageResource(R.drawable.iconclick9);
+                if (viewbh[1]==114) {
+                    img2.setImageResource(R.drawable.iconclick110);
                     viewbh[1]=2;
                 }else {
-                    db.setImageResource(R.drawable.icnotification10);
-                    viewbh[1]=0;
+                    img2.setImageResource(R.drawable.icnotification110);
+                    viewbh[1]=114;
                 }
             }
         });
-        dl.setOnClickListener(new View.OnClickListener() {
+        img3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[2]==0) {
-                    dl.setImageResource(R.drawable.iconclick3);
+                if (viewbh[2]==114) {
+                    img3.setImageResource(R.drawable.iconclick11);
                     viewbh[2]=3;
                 }else {
-                    dl.setImageResource(R.drawable.icnotification6);
-                    viewbh[2]=0;
+                    img3.setImageResource(R.drawable.icnotification4);
+                    viewbh[2]=114;
                 }
             }
         });
-        dcl.setOnClickListener(new View.OnClickListener() {
+        img4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[3]==0) {
-                    dcl.setImageResource(R.drawable.iconclick7);
+                if (viewbh[3]==114) {
+                    img4.setImageResource(R.drawable.iconclick8);
                     viewbh[3]=4;
                 }else {
-                    dcl.setImageResource(R.drawable.icnotification9);
-                    viewbh[3]=0;
+                    img4.setImageResource(R.drawable.icnotification2);
+                    viewbh[3]=114;
                 }
             }
         });
-        mm.setOnClickListener(new View.OnClickListener() {
+        img5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[4]==0) {
-                    mm.setImageResource(R.drawable.iconclick1);
+                if (viewbh[4]==114) {
+                    img5.setImageResource(R.drawable.iconclick2);
                     viewbh[4]=5;
                 }else {
-                    mm.setImageResource(R.drawable.icnotification2);
-                    viewbh[4]=0;
+                    img5.setImageResource(R.drawable.icnotification5);
+                    viewbh[4]=114;
                 }
             }
         });
-        tn.setOnClickListener(new View.OnClickListener() {
+        img6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[5]==0) {
-                    tn.setImageResource(R.drawable.iconclick10);
+                if (viewbh[5]==114) {
+                    img6.setImageResource(R.drawable.iconclick4);
                     viewbh[5]=6;
                 }else {
-                    tn.setImageResource(R.drawable.icnotification8);
-                    viewbh[5]=0;
+                    img6.setImageResource(R.drawable.icnotification7);
+                    viewbh[5]=114;
                 }
             }
         });
-        ca.setOnClickListener(new View.OnClickListener() {
+        img7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewbh[6]==0) {
-                    ca.setImageResource(R.drawable.iconclick11);
+                if (viewbh[6]==114) {
+                    img7.setImageResource(R.drawable.iconclick3);
                     viewbh[6]=7;
                 }else {
-                    ca.setImageResource(R.drawable.icnotification4);
-                    viewbh[6]=0;
+                    img7.setImageResource(R.drawable.icnotification6);
+                    viewbh[6]=114;
                 }
             }
         });
+        img8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewbh[7]==114) {
+                    img8.setImageResource(R.drawable.iconclick9);
+                    viewbh[7]=8;
+                }else {
+                    img8.setImageResource(R.drawable.icnotification10);
+                    viewbh[7]=114;
+                }
+            }
+        });
+        img9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewbh[8]==114) {
+                    img9.setImageResource(R.drawable.iconclick6);
+                    viewbh[8]=9;
+                }else {
+                    img9.setImageResource(R.drawable.icnotification1);
+                    viewbh[8]=114;
+                }
+            }
+        });
+        img10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewbh[9]==114) {
+                    img10.setImageResource(R.drawable.iconclick10);
+                    viewbh[9]=10;
+                }else {
+                    img10.setImageResource(R.drawable.icnotification8);
+                    viewbh[9]=114;
+                }
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,10 +230,10 @@ public class BhFragment extends Fragment {
         bh.put(viewbh[2]);
         bh1.put(viewbh[3]);
         bh1.put(viewbh[4]);
-        bh1.put(viewbh[5]);
+        bh1.put(viewbh[9]);
         bh2.put(viewbh[6]);
-        bh2.put(114);
-        bh2.put(114);
+        bh2.put(viewbh[7]);
+        bh2.put(viewbh[8]);
 
         bhdt.put(bh);
         bhdt.put(bh1);

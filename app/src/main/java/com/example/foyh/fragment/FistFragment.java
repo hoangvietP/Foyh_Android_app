@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.LinearLayoutCompat;
 
@@ -45,6 +46,8 @@ public class FistFragment extends Fragment {
         view = inflater.inflate(R.layout.step1, container, false);
         np = view.findViewById(R.id.np);
         np1 = view.findViewById(R.id.np1);
+        TextView one = view.findViewById(R.id.one);
+        TextView two = view.findViewById(R.id.tow);
         Button btn = view.findViewById(R.id.next_button);
         // anim
         LinearLayoutCompat ln = view.findViewById(R.id.linear1);
@@ -70,46 +73,121 @@ public class FistFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         }.start();
+        int[] monthD= new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         if (stt==0){
-            np.setMinValue(1);
-            int[] monthD= new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-            np.setMaxValue(monthD[dt.getMonth()-1]);
-            np.setValue(Integer.parseInt(dt.getDay()));
+            np1.setMinValue(1);
+
+            np1.setMaxValue(Integer.parseInt(dt.getDay()));
+            np1.setValue(Integer.parseInt(dt.getDay()));
 
 
-            np1.setMinValue(dt.getMonth()-2);
-            int o=dt.getMonth()+2;
-                if (dt.getMonth()+1==13){
-                    np1.setMinValue(2);
-                    np1.setMaxValue(12);
-                }else if (dt.getMonth()+2==13){
-                    np1.setMinValue(1);
-                    np1.setMaxValue(12);
-                }else {
-                np1.setMaxValue(dt.getMonth()+2);
+            String[] nums= {(dt.getMonth()-2)+"",(dt.getMonth()-1)+"",(dt.getMonth())+""};
+            int day = Integer.parseInt(dt.getDay());
+            if (day+monthD[dt.getMonth()-1]>35) {
+                nums=new String[]{(dt.getMonth()-1)+"",(dt.getMonth())+""};
             }
 
-            np1.setValue(dt.getMonth());
+            if (dt.getMonth()==1){
+                nums= new String[]{ "11",  "12", "1"};
+            }else if (dt.getMonth()==2){
+                nums= new String[]{"12",  "1", "2"};
+            }
+
+            np.setMaxValue(nums.length-1);
+            np.setMinValue(0);
+            np.setValue(dt.getMonth());
+            np.setWrapSelectorWheel(false);
+            np.setDisplayedValues(nums);
+            np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
 
         }else {
-            TextView one = view.findViewById(R.id.one);
-            TextView tow = view.findViewById(R.id.tow);
-            one.setText("Từ ngày");tow.setText("Đến ngày");
             np.setMinValue(10);
             np.setMaxValue(20);
-            np1.setMinValue(8);
+            np1.setMinValue(12);
             np1.setMaxValue(25);
+             one.setText("Từ ngày thứ");
+             two.setText("Đến ngày");
         }
-        np1.setWrapSelectorWheel(true);
-        np.setWrapSelectorWheel(true);
-
         np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){
-                rt[0]=newVal;
+                if (stt==0){
+                int day = Integer.parseInt(dt.getDay());
+                int daycl=0;
+                int month=0;
+                if (day+monthD[dt.getMonth()-1]<=35) {
+                    daycl = 35 - (day + monthD[dt.getMonth() - 1]);
+                    if (newVal == 0) {
+                        np1.setMinValue(monthD[dt.getMonth() - 2]-daycl);
+                        np1.setMaxValue(monthD[dt.getMonth() - 2]);
+                    }else if (newVal==1){
+                        np1.setMinValue(1);
+                        np1.setMaxValue(monthD[dt.getMonth() - 1]);
+                    }else if (newVal==2){
+                        np1.setMinValue(1);
+                        np1.setMaxValue(day);
+                    }
+                    if (dt.getMonth()!=1 && dt.getMonth()!=2){
+                        if (newVal==0){
+                            month=dt.getMonth() - 2;
+                        }else if (newVal==1){
+                            month=dt.getMonth() - 1;
+                        }else if (newVal==2){
+                            month=dt.getMonth();
+                        }
+                    }else if (dt.getMonth()==1){
+                        if (newVal==0){
+                            month=11;
+                        }else if (newVal==1){
+                            month=12;
+                        }else if (newVal==2){
+                            month=1;
+                        }
+                    }else if (dt.getMonth()==2){
+                        if (newVal==0){
+                            month=12;
+                        }else if (newVal==1){
+                            month=1;
+                        }else if (newVal==2){
+                            month=2;
+                        }
+                    }
+                }else {
+                    daycl= 35-day;
+                    if (newVal == 0) {
+                        np1.setMinValue(monthD[dt.getMonth()-1]-daycl);
+                        np1.setMaxValue(monthD[dt.getMonth() - 1]);
+                    }else if (newVal==1){
+                        np1.setMinValue(1);
+                        np1.setMaxValue(day);
+                    }
+                    if (dt.getMonth()!=1 && dt.getMonth()!=2){
+                        if (newVal==0){
+                            month=dt.getMonth() - 1;
+                        }else if (newVal==1){
+                            month=dt.getMonth();
+                        }
+                    }else if (dt.getMonth()==1){
+                        if (newVal==0){
+                            month=12;
+                        }else if (newVal==1){
+                            month=1;
+                        }
+                    }else if (dt.getMonth()==2){
+                        if (newVal==0){
+                            month=1;
+                        }else if (newVal==1){
+                            month=2;
+                        }
+                    }
+                }
+                rt[1]=month;
                 if (newVal==0){
-                    rt[0]=1;
+                    rt[1]=dt.getMonth()-1;
+                }if (newVal==1){
+                    rt[1]=dt.getMonth();
+                }
                 }
                 if (stt!=0){
                     if (newVal==0){
@@ -118,9 +196,6 @@ public class FistFragment extends Fragment {
                         rt[0]=newVal;
                     }
 
-                    np1.setMinValue(newVal+2);
-                    np1.setMaxValue(newVal+6);
-                    np1.setValue(20);
                 }
 
             }
@@ -129,9 +204,11 @@ public class FistFragment extends Fragment {
         np1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){
-                rt[1]=newVal;
-                if (newVal==0){
-                    rt[1]=1;
+                if (stt==0){
+                    rt[0]=newVal;
+                    if (newVal==0){
+                        rt[0]= Integer.parseInt(dt.getDay());
+                    }
                 }
                 if (stt!=0){
                     if (newVal==0){

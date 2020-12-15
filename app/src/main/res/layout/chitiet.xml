@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+   android:layout_gravity="center"
+    >
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icdt"/>
+    <TextView
+        android:id="@+id/md"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="5dp"
+        android:gravity="center"
+        android:text="25/12 - 30/12"
+        android:textColor="@color/black_overlay"
+        android:textSize="12sp" />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/eggicon"/>
+        <TextView
+            android:id="@+id/mt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:gravity="center"
+            android:text="25/12 - 30/12"
+            android:textColor="@color/black_overlay"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:src="@drawable/dd"/>
+        <TextView
+            android:id="@+id/at"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="5dp"
+            android:gravity="center"
+            android:text="25/12 - 30/12"
+            android:textColor="@color/black_overlay"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/dx"/>
+        <TextView
+            android:id="@+id/kat"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:gravity="center"
+            android:text="25/12 - 30/12"
+            android:textColor="@color/black_overlay"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:gravity="center"
+        android:background="@drawable/whiteline"
+        android:textColor="@android:color/white"
+        android:textSize="12sp">
+    </TextView>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="Hôm nay"
+        />
+    <TextView
+        android:id="@+id/nn"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="Hôm nay"
+        />
+    <ImageView
+        android:id="@+id/den"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/dd"/>
+
+
+</LinearLayout>
+</LinearLayout>

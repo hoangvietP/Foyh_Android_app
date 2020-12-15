@@ -13,9 +13,7 @@
         android:textSize="30sp"
         android:text="Thông Tin Cá Nhân"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"></TextView>
-
     <LinearLayout
         android:orientation="horizontal"
         android:paddingTop="20dp"
@@ -30,32 +28,80 @@
             android:layout_height="100dp"></ImageView>
 
     </LinearLayout>
-
     <EditText
-        android:hint="   Họ Và Tên"
+        android:hint="Họ Và Tên"
         android:layout_marginTop="10dp"
         android:id="@+id/addName"
+        android:paddingLeft="10dp"
+        android:textColor="@android:color/holo_blue_dark"
         android:background="@drawable/input"
         android:layout_width="match_parent"
         android:layout_height="50dp"></EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="Năm Sinh"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:textColor="@color/white"
+        />
+    <NumberPicker
+        android:id="@+id/sn"
+        android:background="@drawable/padding"
+        style="@android:style/Widget.Material.Light.NumberPicker"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
 
+        android:textDirection="firstStrongLtr"
+        android:theme="@style/NumberPickerTheme"
+        tools:targetApi="n" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"></TextView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="14sp"
+    android:text="Đăng ký tài khoản để bảo toàn dữ liệu của bạn, và nhận ưu đãi!"
+    android:textColor="@color/white"/>
     <EditText
-        android:inputType="date"
-        android:hint="   Sinh Nhật"
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingLeft="10dp"
+        android:hint="Tài khoản"
+        android:layout_marginTop="10dp"
+        android:id="@+id/user"
+        android:background="@drawable/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></EditText>
+    <EditText
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingLeft="10dp"
+        android:id="@+id/pass"
+        android:hint="Mật khẩu"
         android:layout_marginTop="10dp"
         android:background="@drawable/input"
         android:layout_width="match_parent"
         android:layout_height="50dp"></EditText>
-
 
     <LinearLayout
         android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:onClick="add"
             android:layout_weight="1"
-            android:id="@+id/btnAddToList"
+            android:id="@+id/add"
             android:text="Lưu"
              android:textColor="@android:color/white"
             android:background="@android:color/holo_blue_dark"

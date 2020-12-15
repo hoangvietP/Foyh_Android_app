@@ -107,8 +107,6 @@ public class SecondFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 String qs="";
-
-
                 switch (k){
                     case 0:
 
@@ -140,11 +138,6 @@ public class SecondFragment extends Fragment {
                 k++;
             }
         });
-
-
-
-
-
         return view;
     }
 

@@ -7,9 +7,11 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,7 +21,9 @@ import android.widget.TextView;
 
 import com.example.foyh.R;
 import com.example.foyh.fragment.BhFragment;
+import com.example.foyh.fragment.PiechartFragment;
 import com.example.foyh.fragment.ValuebhFragment;
+import com.example.foyh.fragment.ttFragment;
 import com.example.foyh.testui.Data.classDT.fileDAO;
 import com.example.foyh.testui.Data.service.DataServiceMethod;
 import com.github.mikephil.charting.charts.PieChart;
@@ -41,11 +45,10 @@ import java.util.List;
 
 public class User extends AppCompatActivity {
 //    private AnyChartView Chart;
-    PieChart chart;
-    TextView date,day;
-    ImageView prf;
-    String[] vl = {"Mùa dâu","Mùa Trứng","Ngày thường"};
-    int[] dd ={5,6,20};
+    TextView date,day,ct;
+    ImageView prf,next,pre;
+    JSONArray ard = new JSONArray();
+    Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,39 +58,44 @@ public class User extends AppCompatActivity {
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_user);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
-
-
-
-
-
-        chart = (PieChart) findViewById(R.id.piechart);
-        chart.setRotationEnabled(true);
-        chart.setDescription(new Description());
-        chart.setHoleRadius(38f);
-        chart.setTransparentCircleAlpha(0);
-        chart.setCenterTextSize(10);
-        chart.setEntryLabelTextSize(9f);
-        chart.setClickable(true);
-        Legend legend=chart.getLegend();
-        legend.setForm(Legend.LegendForm.CIRCLE);
-        legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
-        try {
-            setupChart();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        pre= findViewById(R.id.preic);
+        ct= findViewById(R.id.ct);
 
         JSONArray bh = new JSONArray();
+        fileDAO file = new fileDAO();
+        JSONObject ob= null;
+
+        try {
+            ob = file.getData("thisMonthData.json","data",this);
+            String dateUpdate= ob.getString("dayupdate");
+             ard=ob.getJSONArray("dataday");
+            JSONArray dt = ard;
+            int daycount = dt.getInt(0);//today
+            int month =dt.getInt(1);// count month
+            int longMo = ard.getInt(2);
+            int longdt= ard.getInt(3);
+            JSONArray trt = ard.getJSONArray(4);
+            next = findViewById(R.id.next);
+            day= findViewById(R.id.day);
+            day.setText("Ngày thứ: "+daycount+" của chu kì");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         try {
             loadFragment(new ValuebhFragment(getStt()));
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout1,new PiechartFragment(this,ard));
+            fragmentTransaction.commit(); // save the changes
+            setDate();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
+        pre.setVisibility(View.INVISIBLE);
         prf= (ImageView)findViewById(R.id.prf);
         prf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +104,33 @@ public class User extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        pre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout1,new PiechartFragment(context,ard));
+                fragmentTransaction.commit(); // save the changes
+                pre.setVisibility(View.INVISIBLE);
+                next.setVisibility(View.VISIBLE);
+                ct.setVisibility(View.VISIBLE);
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout1,new ttFragment());
+                fragmentTransaction.commit(); // save the changes
+                setDate();
+                pre.setVisibility(View.VISIBLE);
+                next.setVisibility(View.INVISIBLE);
+                ct.setVisibility(View.INVISIBLE);
+            }
+        });
+
 
     }
 private  JSONObject getStt(){
@@ -116,53 +151,9 @@ private  JSONObject getStt(){
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.framebh,fragment);
         fragmentTransaction.commit(); // save the changes
-        setDate();
 
     }
-    public void setupChart() throws FileNotFoundException, JSONException {
 
-        fileDAO file = new fileDAO();
-        JSONObject ob=  file.getData("thisMonthData.json","data",this);
-        String dateUpdate= ob.getString("dayupdate");
-        JSONArray ard=ob.getJSONArray("dataday");
-
-        JSONArray dt = ard;
-        int daycount = dt.getInt(0);//today
-        int month =dt.getInt(1);// count month
-        int longMo = ard.getInt(2);
-        int longdt= ard.getInt(3);
-        JSONArray trt = ard.getJSONArray(4);
-        int[] dayrt= {trt.getInt(0),trt.getInt(1)};
-
-        day= findViewById(R.id.day);
-        day.setText("Ngày thứ: "+daycount+" của chu kì");
-
-
-
-        ArrayList<PieEntry> visi = new ArrayList<>();
-        visi.add(new PieEntry(longdt,"Mùa dâu"));
-        visi.add(new PieEntry(-trt.getInt(0)+trt.getInt(1),"Mùa trứng"));
-        visi.add(new PieEntry(longMo-(-trt.getInt(0)+trt.getInt(1)),"Ngày an toàn"));
-
-        PieDataSet pieDataSet = new PieDataSet(visi,"");
-        pieDataSet.setFormSize(20);
-        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        pieDataSet.setValueTextColor(R.color.white);
-        pieDataSet.setValueTextSize(10f);
-        List<Integer> colors = new ArrayList<>();
-        colors.add(R.color.white);
-        colors.add(R.color.white);
-        colors.add(R.color.white);
-        pieDataSet.setValueTextColors(colors);
-
-        PieData pieData = new PieData(pieDataSet);
-
-        chart.setData(pieData);
-        chart.getDescription().setEnabled(false);
-        chart.setCenterText("Tổng: 30 ngày");
-        chart.setCenterTextColor(R.color.white);
-        chart.animate();
-    }
 
     public void setDate(){
         date= findViewById(R.id.date);

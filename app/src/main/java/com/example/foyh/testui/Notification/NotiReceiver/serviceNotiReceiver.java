@@ -23,6 +23,7 @@ public class serviceNotiReceiver {
         JSONArray stt = ob.getJSONArray("stt");
         JSONArray sttv = ob.getJSONArray("sttv");
         String h = ob.getString("st");
+        String nn = ob.getString("nn");
         boolean st=false;
         for (int i=0;i<=sttv.length()-1;i++){
             if (sttv.getInt(i)==stt.getInt(bt)){
@@ -40,7 +41,7 @@ public class serviceNotiReceiver {
         }else if (st==false){
             sttv.put(stt.getInt(bt));
         }
-        new DataServiceMethod().saveStt(context,stt,sttv,h);
+        new DataServiceMethod().saveStt(context,stt,sttv,h,nn);
         return true;
     }
 }
