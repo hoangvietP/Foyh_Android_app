@@ -1,5 +1,7 @@
 package com.example.foyh.testui.Data.classDT;
 
+import android.util.Log;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -75,7 +77,7 @@ public class ConnectAsynchronously {
             result="loss";
         }
 
-
+        Log.d("data rt",result+" -result");
         return result;
     }
 

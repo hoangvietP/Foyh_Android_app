@@ -255,6 +255,26 @@ public class BhFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        JSONArray sttDt = new JSONArray();
+        sttDt.put(12);
+        sttDt.put(1);
+        sttDt.put(2);
+        sttDt.put(3);
+        sttDt.put(4);
+        sttDt.put(5);
+        sttDt.put(6);
+        sttDt.put(7);
+        sttDt.put(8);
+        sttDt.put(9);
+        JSONArray sttv= new JSONArray();
+        try {
+            new DataServiceMethod().saveStt(mContext,sttDt,sttv,"","");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
         Intent intent = new Intent(mContext, MainActivity.class);
         startActivity(intent);
     }

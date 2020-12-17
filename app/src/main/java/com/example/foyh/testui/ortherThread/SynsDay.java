@@ -61,7 +61,7 @@ public class SynsDay  extends AsyncTask<String, Void, String> {
            } catch (FileNotFoundException e) {
                e.printStackTrace();
            }
-           if (hh==20 && mm==01 && ss==01){
+           if (hh==00 && mm==00 && ss==01){
                try {
                    serviceIntent= new Intent(context, ExampleService.class);
                    try {
@@ -87,7 +87,6 @@ public class SynsDay  extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String aString) {
         super.onPostExecute(aString);
     }
-
     public void setStt(int stt){
         fileDAO file=new fileDAO();
         JSONObject k = new JSONObject();
