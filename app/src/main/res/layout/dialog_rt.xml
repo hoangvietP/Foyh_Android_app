@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/hightPink"
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@color/hightPink"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="@drawable/bg_crollview"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPink"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Dự đoán chu kì này"/>
+
+
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/holo_blue_dark"
+                android:text="
+    - Đây là thời gian có tỉ lệ mang thai cao nếu có quan hệ.\n
+    - Thời gian rụng trứng có tỉ lệ cao rơi vào những ngày trên, ngoài ra bạn nên chú ý tới những ngày gần những ngày dự đoán để có những biện pháp phù hợp với mong muốn.\n
+    - Ngoài ra bạn cần chú ý tới những biểu hiện và cập nhật vào thanh biểu hiện để có dự đoán chuẩn sác nhất.
+
+                    "
+                android:textSize="11sp"
+                android:gravity="start"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chuy"
+            android:background="@drawable/bg_crollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="6">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPink"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Chú ý"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPink"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:text="Vuốt xuống để xem thêm"
+                />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/blue"
+                    android:gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="10dp"
+                    android:text=
+                        "
+1. Đối với người không muốn mang thai. \n
+    - Đây là giai đoạn tỉ lệ mang thai rất cao.\n
+    - Nếu quan hệ tình dục hãy đarm bảo các biện pháp an toàn như sử dụng bao cao su.\n
+    - Nếu không sử dụng các biện pháp an toàn hãy cân nhắc sử dụng thuốc tránh thai 24 hoặc 48 giờ, tại những cơ sở bán thuốc uy tín.\n
+2. Đối với người mong muốn mang thai. \n
+    - Đây là thời gian rất tốt để thụ thai.\n
+    - Không nên ăn đồ ăn sẵn, thực phẩm nhiều chất béo vì chất béo có trong những loại thực phẩm này sẽ khiến chất lượng trứng giảm.\n
+    - Thực phẩm tái, sống có chứa nhiều vi khuẩn sẽ gây ảnh hưởng đến chất lượng trứng, đồng thời cũng gây hại đến cơ thể phụ nữ. \n
+    - Tránh xa rượu bia trong những ngày rụng trứng vì rượu bia sẽ gây ức chế khả năng mang thai ở phụ nữ và làm ức chế khả năng mang thai. \n
+    - Không nên tập luyện quá sức, tập luyện ở mức độ bình thường sẽ rất có ích cho cơ thể, nhưng đối với người tập luyện quá sức cơ thể sẽ trở nên mệt mỏi, năng lượng sẽ tiêu hao nhiều hơn ngăn cản quá trình rụng trứng. \n
+    - Không sử dụng chất bôi trơn vào ngày rụng trứng vì chất bôi trơn sẽ làm cản trở tốc độ di chuyển của tinh trùng, thậm chí còn tiêu diệt tinh trùng trước khi gặp được trứng. \n
+    - Cần bổ sung những thực phẩm giàu omega 3 như cá mòi, cá trích, cá hồi, các loại hạt như hạt óc chó, quả lanh... Omega 3 trong thực phẩm giúp kháng viêm, tăng cường khả năng mang thai .\n
+"
+                    >
+
+                </TextView>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/dh"
+            android:background="@drawable/bg_crollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="6">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPink"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Dấu hiệu rụng trứng"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPink"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:text="Vuốt xuống để xem thêm"
+                />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/blue"
+                    android:gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="10dp"
+                    android:text="1. Thay đổi nhiệt độ cơ sở \n
+    Thực tế nhiệt độ cơ sở được ghi nhận khi bạn nghỉ ngơi hoàn toàn, thường ổn định ở khoảng 36,5 độ C. Tuy nhiên trong thời gian rụng trứng, nhiệt độ thường tăng lên khoảng 37 độ C không do bệnh lý hoặc tình trạng sức khỏe này.
+\n
+\n
+2. Dịch nhầy âm đạo \n
+    Người phụ nữ tiết dịch nhầy âm đạo trong suốt chu kỳ kinh nguyệt, tuy nhiên ở ngày trứng rụng, do cơ thể sản sinh nhiều hormone estrogen nên dịch nhầy sẽ dai và trong hơn, sờ vào cảm giác như lòng trắng trứng.
+\n
+\n
+3. Xuất hiện đốm máu\n
+    Đốm máu thường xuất hiện vào ngày trứng rụng, có dạng màu nâu hoặc đốm máu tươi dính trên quần lót. Nguyên nhân do nang trứng bao quanh và bảo vệ tế bào trứng vỡ ra để chuẩn bị cho quá trình thụ tinh.
+
+\n
+\n
+4. Tăng ham muốn tình dục \n
+    Vào ngày trứng rụng, do hormone nữ estrogen tăng cao nên người phụ nữ cũng thường có ham muốn tình dục cao hơn, họ trở nên quyến rũ hơn trong mắt người bạn đời. Thông thường ham muốn tình dục tăng kéo dài trong khoảng 6 ngày, trùng với việc sản xuất hormone LH, khi hormone này đạt đỉnh thì ham muốn cũng lớn nhất.
+\n
+\n
+5. Sưng đầu ngực, đau vú \n
+    Nhũ hoa của chị em sẽ trở nên nhạy cảm hơn, bầu ngực cũng to, đầy đặn và căng cứng hơn trong ngày rụng trứng. Tình trạng này cũng do sự thay đổi nội tiết tố trong cơ thể.
+\n
+\n
+6. Đau bụng dưới và vùng chậu\n
+    Rất nhiều chị em phụ nữ có thể nhận biết ngày rụng trứng dễ dàng qua cảm giác đau, căng nhẹ vùng bụng dưới hoặc vùng chậu. Tình trạng này thường không kéo dài, chỉ diễn ra trong khoảng vài phút hoặc vài giờ. Đi kèm với cảm giác khó chịu vùng bụng, chị em có thể cảm thấy đầy hơi, chướng bụng, buồn nôn, chuột rút,…
+\n
+\n
+7. Cổ tử cung mở rộng\n
+    Khi chuẩn bị đến thời điểm trứng rụng, cổ tử cung bị kích thích trở nên mềm và mở rộng hơn để chuẩn bị tiếp nhận trứng. Tuy nhiên thay đổi này khá khó để nhận biết. Nếu muốn kiểm tra sự thay đổi cổ tử cung, bạn có thể thực hiện như sau:
+
+    \n
+    - Đứng ở vị trí giống như khi đặt tampon, đặt 1 chân lên cao (bồn cầu) rồi dùng ngón tay đưa vào âm đạo. Nếu trong thời gian trứng rụng, bạn sẽ cảm nhận được cổ tử cung mềm hơn, giống như da vùng chóp mũi.
+
+
+    \n
+    - Thực tế, dấu hiệu trứng rụng ở mỗi chị em phụ nữ là khác nhau, hơn nữa cũng thay đổi giữa các chu kỳ nên muốn tính toán chính xác thời điểm này, cần dựa trên nhiều dấu hiệu kết hợp.
+"
+                    >
+
+                </TextView>
+            </ScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

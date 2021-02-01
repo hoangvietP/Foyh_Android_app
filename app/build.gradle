@@ -33,6 +33,7 @@ allprojects {
 
 dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])

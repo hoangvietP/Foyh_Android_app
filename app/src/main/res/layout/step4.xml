@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="match_parent"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
@@ -12,53 +13,56 @@
         android:textSize="14sp"
         android:textColor="@android:color/white"
         ></TextView>
+
     <LinearLayout
+        android:background="@drawable/pading"
         android:id="@+id/linear1"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        android:layout_weight="7"
-        >
+        android:layout_height="130dp"
+
+        android:orientation="vertical">
 
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:paddingTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/icnotification111"
-                    android:scaleType="centerCrop"></ImageView>
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification111"></ImageView>
+
                 <TextView
                     android:id="@+id/tv00"
-                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Tôi ổn"
+                    android:textColor="@android:color/white"
                     android:textSize="8sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
 
@@ -66,16 +70,16 @@
                     android:layout_width="45dp"
                     android:layout_height="35dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/icnotification110"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification110" />
 
                 <TextView
                     android:id="@+id/tv01"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@android:color/white"
                     android:text="Cáu giận"
+                    android:textColor="@android:color/white"
                     android:textSize="8sp" />
             </LinearLayout>
 
@@ -83,44 +87,45 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded3"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/icnotification4"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification4" />
 
                 <TextView
                     android:id="@+id/tv02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Chán ăn"
+                    android:text="Thèm ăn"
                     android:textColor="@android:color/white"
                     android:textSize="8sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded4"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification2"
-                    android:scaleType="centerCrop" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification2" />
 
                 <TextView
                     android:id="@+id/tv03"
@@ -136,18 +141,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded5"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification5"
-                    android:scaleType="centerCrop" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification5" />
 
                 <TextView
                     android:id="@+id/tv04"
@@ -161,28 +166,29 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:paddingTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded6"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/icnotification7"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification7" />
 
                 <TextView
                     android:id="@+id/tv05"
@@ -194,21 +200,22 @@
                     android:textSize="8sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded7"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification6"
-                    android:scaleType="centerCrop" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification6" />
 
                 <TextView
                     android:id="@+id/tv06"
@@ -224,18 +231,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded8"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification10"
-                    android:scaleType="centerCrop" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification10" />
 
                 <TextView
                     android:id="@+id/tv07"
@@ -247,21 +254,22 @@
                     android:textSize="8sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded9"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification1"
-                    android:scaleType="centerCrop" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icnotification1" />
 
                 <TextView
                     android:id="@+id/tv08"
@@ -277,60 +285,68 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center|top"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_weight="1">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/image_view_expanded10"
-                    android:layout_weight="1"
                     android:layout_width="45dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/icnotification8"
+                    android:layout_weight="1"
                     android:scaleType="centerCrop"
-                    />
+                    app:srcCompat="@drawable/icnotification8" />
+
                 <TextView
                     android:id="@+id/tv09"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@android:color/white"
                     android:text="Tức ngực"
+                    android:textColor="@android:color/white"
                     android:textSize="8sp" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="5dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         ></TextView>
-    <Button
-        android:layout_weight="1"
-        android:id="@+id/next_button1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:text="Tiếp Theo"
-        android:layout_height="50dp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_blue_dark"
-        android:onClick="setQuessiton"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_weight="1"
-        ></TextView>
-    <Button
-        android:layout_weight="1"
-        android:id="@+id/pre_button"
-        android:layout_width="match_parent"
-        android:text="Quay Lại"
-        android:layout_height="50dp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_blue_dark"
-        android:onClick="setQuessiton"
-        />
-</LinearLayout>
+        android:orientation="horizontal"
+        android:layout_height="35dp">
+        <Button
+            android:id="@+id/pre_button"
+            android:layout_width="120dp"
+            android:text="Bắt đàu lại"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="end"
+            android:layout_height="35dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/padding"
+            />
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ></TextView>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="120dp"
+            android:text="Tiếp Theo"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            android:layout_height="35dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/padding"
+            />
+    </LinearLayout>
 </LinearLayout>

@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:text="Đăng ký tài khoản để bảo toàn dữ liệu của bạn, và nhận ưu đãi!"
+        android:text="Đăng nhập để đồng bộ dữ liệu của bạn! ( Tải về dữ liệu trước đây)"
         android:textColor="@color/white"/>
     <EditText
         android:textColor="@android:color/holo_blue_dark"
@@ -96,5 +96,14 @@
             android:textColor="@android:color/white"
             android:layout_height="wrap_content"></Button>
     </LinearLayout>
-
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Bỏ qua"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"></Button>
 </LinearLayout>

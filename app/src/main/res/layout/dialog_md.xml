@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="@color/hightPink">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@color/hightPink"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_crollview"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Dự đoán chu kì này"
+                android:textColor="@color/colorPink"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="start"
+                    android:text="
+    - Hãy chắc chắn mang theo băng vệ sinh khi gần những ngày này.\n
+    - Không hoặc hạn chế quan hệ trong những ngày có kinh để hạn chế mội sốt bệnh.\n
+    - Chú ý chế độ ăn uống đủ chất, hạn chế vận động.\n
+    - Nếu đau bụng có thể lưu ý uống trà gừng, trườm nóng. \n
+    - Có thể lưu ý sử dụng thuốc giảm đau để giảm cơn đau bụng. \n
+    - Chú ý chế độ nghỉ ngơi.
+                    "
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chuy1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="6"
+            android:background="@drawable/bg_crollview"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Dấu hiệu"
+                android:textColor="@color/colorPink"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Vuốt xuống để xem thêm"
+                android:textColor="@color/colorPink"
+                android:textSize="10dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="start"
+                    android:text="
+1. Khí hư ra nhiều\n
+	Chị em trước khi đến chu kỳ kinh nguyệt sẽ thấy hormone estrogen trong cơ thể gia tăng, đó chính là nguyên nhân khiến cho khí hư ra nhiều. Nếu như khí hư ra nhiều và đều trong khoảng 2 – 3 ngày rồi sau đó biến mất thì chính là dấu hiệu sắp có kinh nguyệt.
+\n
+
+2. Da mặt nhờn và nổi mụn\n
+	Trước ngày đèn đỏ khoảng 1 tuần bạn gái trong tuổi dậy thì thường thấy da mặt nhờn và có nổi mụn nhiều hoặc ít tùy vào cơ địa mỗi người. Đó chính là lý do lý giải vì sao có người da dầu, có người lại da khô. Tuy nhiên, dù là loại da nào đi chăng nữa thì trước khi bước vào chu kỳ kinh nguyệt nữ giới cũng sẽ tiết ra một lượng bã nhờn làm cho da trở nên nhờn hơn, tạo điều kiện lý tưởng để cho mụn phát triển. Mụn xuất hiện khiến cho chị em cảm thấy vô cùng khó chịu và mặc cảm. Tuy nhiên các bạn đừng quá lo lắng bởi sau khi kinh nguyệt kết thúc thì mụn cũng sẽ tự nhiên biến mất.
+\n
+3. Căng tức ngực, tăng kích thước vòng 1 \n
+	Căng tức ngực chính là một trong những dấu hiệu có kinh sớm nhất. Khoảng hơn 1 tuần trước khi đến kỳ kinh xuất hiện thì chị em sẽ thấy vùng ngực bị căng tức, kích thước vòng 1 tăng lên đôi chút. Hiện tượng tức ngực lan rộng sang 2 vùng cận nách. Hiện tượng này xuất hiện do nồng độ hormone trong cơ thể có thay đổi, từ đó làm cho các mô ngực cương lên. Căng tức ngực là một trong những dấu hiệu có kinh trước 1 tuần mà hầu hết nữ giới trước khi đến ngày ấy đều trải qua.
+\n
+4. Đau vùng bụng dưới râm ran \n
+	Trước khi có kinh khoảng 2 – 3 ngày thì nữ giới sẽ thấy đau vùng bụng dưới, có thể là đau râm ran hoặc đau dữ dội tùy thể trạng mỗi người. Hiện tượng này xuất hiện do tử cung co thắt lại để đẩy máu kinh ra bên ngoài cơ thể. Đau vùng bụng dưới chính là một trong những dấu hiệu có kinh điển hình và dễ nhận biết. Tuy nhiên, nếu hiện tượng đau bụng xảy ra không đúng theo chu kỳ kinh nguyệt thì chị em cần chủ động theo dõi, nếu có vấn đề bất thường phải đi khám ngay.
+\n
+5. Đau mỏi lưng \n
+	Hormone prostaglandin có sự thay đổi nhiều trong chu kỳ kinh nguyệt chính là nguyên nhân gây đau mỏi lưng ở nữ giới trước kỳ kinh. Nếu như chị em chỉ bị đau mỏi lưng bình thường báo hiệu kinh nguyệt thì không cần phải quá lo lắng. Trong trường hợp đau mỏi lưng thường xuyên không theo chu kỳ kinh nguyệt thì có thể do bạn mang vác vật nặng, nằm sai tứ thế hoặc là dấu hiệu một bệnh lý liên quan đến cột sống hoặc hệ thần kinh trung ương.
+\n
+6. Tâm trạng thường xuyên bực bội, cáu gắt \n
+	Sự thay đổi đột ngột của hormone trong cơ thể nữ giới cùng với sự xuất hiện của của mụn, đau bụng, đau lưng, đau ngực, thiếu máu... chính là những nguyên nhân khiến cho tâm trạng chị em trở nên khó chịu, bực bội. Do đó mà trước khi có kinh nguyệt thì tâm trạng nữ giới thất thường và có sự biến đổi, trở nên cáu gắt hơn cũng là điều dễ hiểu. Nữ giới nên tham gia các bài tập nhẹ nhàng như tập Thiền, Yoga, dưỡng sinh để giải tỏa stress và cân bằng cuộc sống.
+\n
+7. Cảm giác thèm ăn\n
+	Nếu như bạn cảm thấy tự nhiên thèm ăn hơn bình thường mà không phải dấu hiệu mang thai thì có thể là dấu hiệu sắp có kinh nguyệt, tuy nhiên đây là dấu hiệu không rõ ràng. Bởi vì, những chị em thích ăn vặt thì thường xuyên có cảm giác thèm ăn.
+\n
+8. Dấu hiệu ở đường tiêu hóa \n
+	Hiện tượng tiêu chảy, thèm ăn, buồn nôn,... cũng là một trong những dấu hiệu có kinh khá phổ biến. Tuy nhiên không phải chị em phụ nữ nào cũng có triệu chứng này và hiện tượng này cũng chỉ xuất hiện thoáng quá và sau đó rất nhanh sẽ biến mất.
+\n
+9. Ham muốn tình dục giảm sút\n
+	Mức độ ham muốn tình dục ở nữ giới thay đổi theo chu kỳ, ham muốn của nữ giới thường tăng cao vào tuần thứ 2 và giảm dần vào cuối chu kỳ kinh nguyệt. Phụ nữ trước khi bắt đầu kinh nguyệt sẽ không muốn quan hệ tình dục bởi khi hormone suy giảm thì sẽ làm cho lớp niêm mạc âm đạo bị khô, từ đó mà hứng thú với chuyện “yêu” bị suy giảm.
+\n
+10.Mất ngủ kèm theo mệt mỏi\n
+	Mất ngủ kèm theo theo mệt mỏi chính là dấu hiệu có kinh nguyệt sớm mà bạn không nên bỏ qua. Để có thể cải thiện vấn đề này, không để cho nó làm ảnh hưởng đến công việc thì chị em nên bổ sung thêm năng lượng cho bản thân cũng như có chế độ sinh hoạt khoa học hơn. Chị em không nên thức khuya vào thời gian này vì sẽ làm tình trạng mất ngủ thêm trầm trọng.
+\n
+11. Đau nửa đầu\n
+	Nghiên cứu khoa học cho biết sẽ có khoảng 50% nữ giới xuất hiện tình trạng bị đau nửa do thay đổi về nồng độ estrogen trong cơ thể. Thường là đau nửa đầu và hiện tượng hiệu này sẽ càng rõ nét khi gần đến ngày có kinh nguyệt.
+\n
+12. Nhiệt độ cơ thể tăng \n
+	Quá trình rụng trứng diễn ra sẽ khiến cho thân nhiệt tăng cao và thân nhiệt cũng sẽ tiếp tục tăng cho đến khi kinh nguyệt xuất hiện. Do đó mà nếu trước chu kỳ kinh nguyệt khoảng 2 tuần mà chị em thấy xuất hiện triệu chứng hơi sốt thì đó là dấu hiệu sắp có kinh nguyệt nhé.
+"
+                    android:textColor="@color/blue"
+                    android:textSize="10dp">
+
+                </TextView>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dh1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:background="@drawable/bg_crollview"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Lưu ý"
+                android:textColor="@color/colorPink"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Vuốt xuống để xem thêm"
+                android:textColor="@color/colorPink"
+                android:textSize="10dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="start"
+                    android:text="PHÂN BIỆT DẤU HIỆU CÓ KINH VÀ DẤU HIỆU MANG THAI \n
+
+	Nhiều chị em đang bị nhầm lẫn giữa dấu hiệu có kinh và dấu hiệu mang thai, bởi vì dấu hiệu 2 hiện tượng này có nhiều điểm khá giống nhau. Tuy nhiên, các bạn vẫn có thể tự phân biệt được qua một số khác biệt dưới đây.
+\n
+1. Thay đổi ở vùng ngực\n
+	Phụ nữ mang thai thì thì kích thước vòng 1 không những căng, tức ngực mà núm vú còn to và trở nên sạm hơn, màu sắc không còn hồng hào như trước. Nữ giới trải qua chu kỳ kinh nguyệt thì vòng 1 chỉ có hiện tượng căng tức, ngoài ra màu sắc núm vú bình thường và hiện tượng này nhanh chóng biến mất chỉ trong một thời gian ngắn.
+
+2. Cảm giác thèm ăn \n
+	Chị em trong chu kỳ kinh nguyệt và phụ nữ khi mới mang thai đều có cảm giác thèm ăn. Tuy nhiên nếu như bà bầu là thường thèm ăn đồ chua hoặc ngọt, còn nữ giới trước kỳ kinh sẽ thèm ăn nhiều loại đồ ăn, nhưng chỉ sau 1 khoảng thời gian thì hiện này sẽ cũng sẽ nhanh chóng mất đi.
+\n
+3. Về tâm trạng, cảm xúc \n
+	Nếu như những cảm giác vui buồn lẫn lộn là hạnh phúc khi được làm mẹ, những lo lắng trầm cảm trong quá trình mang thai. Chị em trước kỳ kinh có tâm trạng dễ kích động, nóng giận do mụn xuất hiện, do đau bụng dưới hay tức ngực gây nên. Đây những cảm xúc bình thường do thay đổi sinh hoạt hằng ngày và sẽ biến mất sau khi trải qua ngày đèn đỏ.
+\n
+4. Cảm giác mệt mỏi và buồn nôn khó chịu \n
+	Ốm nghén chính là nguyên nhân khiến cho thai phụ mệt mỏi và buồn nôn, sợ một số loại mùi. Hiện tượng này sẽ kéo dài trong vài tháng đầu của thai kỳ gây cho thai phụ nhiều mệt mỏi.
+\n
+5. Chuột rút \n
+	Thường thì trước khi có kinh nguyệt thì chị em sẽ bị chuột rút khoảng 1 – 2 ngày nhưng nó sẽ ngày càng giảm dần khi gần đến ngày kinh hoặc khi hết chu kỳ kinh nguyệt. Nhưng đối với phụ nữ mang thai thời kỳ đầu thì chuột rút sẽ lâu hơn, vị trí cũng sẽ khác.
+\n
+Dấu hiệu có kinh nguyệt và dấu hiệu mang thai thường tương đối giống nhau, tuy nhiên dấu hiệu sắp có kinh nguyệt thường sẽ diễn ra rất ngắn, chỉ kéo dài từ 1 – 2 ngày hoặc lâu là khoảng 1 tuần, còn biểu hiện có thai sẽ kéo dài rất lâu, thậm chí có thể kéo dài suốt thai kỳ.
+"
+                    android:textColor="@color/blue"
+                    android:textSize="10dp">
+
+                </TextView>
+            </ScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.foyh">
-
+    package="com.example.Foyh">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
-        android:icon="@drawable/iconlogo"
+        android:icon="@mipmap/logofoyha"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logo_foreground"
+
+        android:roundIcon="@mipmap/logofoyha"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.User"></activity>
+        <activity android:name="com.example.Foyh.activity.User"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".activity.step1"
+            android:screenOrientation="portrait"
+            android:name="com.example.Foyh.activity.step1"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_step1" />
 
-        <service android:name=".testui.Notification.ExampleService" />
+        <service android:name="com.example.Foyh.testui.Notification.ExampleService" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.example.Foyh.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.homeactivity"></activity>
-        <activity android:name=".activity.profileActivity" />
+        <activity android:name="com.example.Foyh.activity.homeactivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.example.Foyh.activity.profileActivity"        android:screenOrientation="portrait" />
 
-        <receiver android:name=".testui.Notification.NotiReceiver.NotificationReceiver" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc1" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc2" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc3" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc4" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc5" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc6" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc7" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc8" />
-        <receiver android:name=".testui.Notification.NotiReceiver.rc9" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.NotificationReceiver" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc1" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc2" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc3" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc4" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc5" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc6" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc7" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc8" />
+        <receiver android:name="com.example.Foyh.testui.Notification.NotiReceiver.rc9" />
     </application>
 
 </manifest>

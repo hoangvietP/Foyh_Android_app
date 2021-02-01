@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_marginBottom="10dp"
     android:gravity="center"
     >
 
@@ -13,12 +14,12 @@
         android:text="Click để chọn biểu hiện, triệu trứng trong ngày"
         android:textSize="10sp"
         android:gravity="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPink"
         android:paddingBottom="5dp"
         ></TextView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="match_parent"
             android:id="@+id/linear1"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:orientation="vertical"
@@ -27,7 +28,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:paddingTop="5dp"
                 android:orientation="horizontal">
                 <LinearLayout
@@ -47,7 +49,7 @@
                         android:scaleType="centerCrop"></ImageView>
                     <TextView
                         android:id="@+id/tv00"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -77,7 +79,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:text="Cáu giận"
                         android:textSize="8sp" />
                 </LinearLayout>
@@ -104,8 +106,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Chán ăn"
-                        android:textColor="@android:color/white"
+                        android:text="Thèm ăn"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -131,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Mệt mỏi"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -158,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Mất ngủ"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -166,7 +168,8 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:paddingTop="5dp"
                 android:orientation="horizontal">
 
@@ -193,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Buồn"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -219,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Đau lưng"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -246,7 +249,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Đau bụng, dưới"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -272,7 +275,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Nổi mụn"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:textSize="8sp" />
 
                 </LinearLayout>
@@ -298,7 +301,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPink"
                         android:text="Tức ngực"
                         android:textSize="8sp" />
 

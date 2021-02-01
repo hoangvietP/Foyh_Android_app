@@ -15,6 +15,7 @@
     <FrameLayout
         android:layout_gravity="left"
         android:paddingLeft="30dp"
+        android:layout_weight="0.2"
         android:id="@+id/frameLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,9 +24,10 @@
         android:id="@+id/imageView6"
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_weight="1"
+        android:layout_weight="0.4"
         app:srcCompat="@drawable/quesition" />
     <FrameLayout
+        android:layout_weight="1.65"
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

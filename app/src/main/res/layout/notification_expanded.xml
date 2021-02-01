@@ -4,17 +4,18 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:weightSum="10"
-    android:background="@color/colorPink"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
+        android:background="@color/Brown"
+        android:id="@+id/linear1"
     android:layout_width="match_parent"
     android:layout_height="180dp"
         android:orientation="vertical"
     android:layout_weight="7"
     >
         <LinearLayout
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_gravity="center"
             android:layout_height="50dp"
             android:gravity="center"

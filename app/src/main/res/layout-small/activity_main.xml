@@ -8,9 +8,6 @@
     android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
-
-
-
     <!--    taskbar-->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"

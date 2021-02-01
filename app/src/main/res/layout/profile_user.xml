@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <FrameLayout
-        android:id="@+id/frameLayoutProfile"
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
-        />
+        android:padding="20dp"
+        android:background="@drawable/bgt"
+        android:gravity="center|top">
+        <TextView
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="30sp"
+            android:text="Thông Tin Cá Nhân"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:onClick="openImage"
+                android:src="@drawable/prf"
+                android:id="@+id/imganh"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"></ImageView>
 
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="Phạm Hoàng Việt"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="Năm sinh: 2000"
+            />
+
+
+
+    </LinearLayout>
 </LinearLayout>

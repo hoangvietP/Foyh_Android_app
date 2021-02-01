@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue1"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/blue1"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/blue1"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_height="450dp">
+    <LinearLayout
+        android:layout_weight="10.5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bgo">
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:background="@drawable/input"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/home" />
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/prf"
+            android:layout_width="match_parent"
+            android:background="@drawable/padding"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/prf" />
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/bgo">
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        >
+    </FrameLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="80dp"
+            android:background="@drawable/bgo">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:textSize="16sp"
+                android:textColor="@color/blue"
+                android:text="Hôm nay"
+                android:textStyle="bold"
+                android:gravity="center"
+                ></TextView>
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_weight="3.5">
+
+                <ImageView
+                    android:id="@+id/iconSttDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:layout_weight="6"
+                    android:src="@drawable/dd" />
+                <LinearLayout
+                    android:layout_weight="4.5"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center|start"
+                        android:text="Ngày thứ 20"
+                        android:textColor="@color/blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/sttDay"
+                        android:layout_weight="3"
+                        android:gravity="center|start"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/blue"
+                        android:text="Ngày an toan"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        ></TextView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="22sp"
+                    android:textColor="@color/blue"
+                    android:text="Thu 4, 20/1"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    ></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/animate"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="top|end"
+            android:background="@drawable/bgo1">
+            <TextView
+                android:id="@+id/nhacnho"
+                android:layout_width="match_parent"
+                android:layout_height="127dp"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:background="@drawable/qsbox"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:textStyle="bold"></TextView>
+            <ImageView
+                android:gravity="end"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:src="@drawable/hello">
+            </ImageView>
+
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/framebh"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bgo">
+        </FrameLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

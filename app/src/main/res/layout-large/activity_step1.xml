@@ -9,18 +9,20 @@
     android:paddingTop="20dp"
     android:layout_height="match_parent"
     android:background="@drawable/bgt"
-    android:weightSum="10"
+    android:weightSum="3"
     android:gravity="right"
     android:orientation="vertical">
     <FrameLayout
+        android:layout_gravity="left"
+        android:paddingLeft="30dp"
         android:id="@+id/frameLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="60dp" />
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
         android:layout_weight="1"
         app:srcCompat="@drawable/quesition" />
     <FrameLayout

@@ -1,12 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
-    android:layout_height="230dp"
-    android:paddingBottom="5dp"
+    android:layout_height="match_parent"
+    android:gravity="center|start"
+    android:orientation="vertical"
+    android:layout_gravity="center|start"
     xmlns:android="http://schemas.android.com/apk/res/android" >
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:text="Dự Đoán Chu Kì"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="click biểu đồ để xem thêm"
+        android:textSize="8sp"
+        android:layout_marginStart="60dp"
+        android:gravity="start|center"
+        />
+
+<LinearLayout
+    android:layout_marginStart="10dp"
+    android:gravity="center|start"
+    android:orientation="horizontal"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="match_parent"
         />
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="140dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ndt" />
+
+                    <TextView
+                        android:id="@+id/md"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:text="Mùa dâu: 15/2 - 20/2"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textStyle="bold"
+                        android:gravity="start|center"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="5dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/nrt"
+                        />
+                    <TextView
+                        android:id="@+id/mt"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:text="Mùa trứng: 15/2 - 20/2"
+                        android:textSize="11sp"
+                        android:gravity="start|center"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nkat"
+                    />
+
+                <TextView
+                    android:id="@+id/kat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:text="K an toàn: 15/2 - 20/2"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="11sp"
+                    android:gravity="start|center"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:layout_weight="3">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nat" />
+                <TextView
+                    android:id="@+id/at"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:text="An toàn: 15/2 - 20/2"
+                    android:textSize="11sp"
+                    android:gravity="start|center"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+</LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,17 +4,15 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-    android:weightSum="3"
-
+            android:layout_height="match_parent"
             android:orientation="vertical"
             >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linear1"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:background="@drawable/custom_padding"
-            android:gravity="center|right"
+            android:gravity="center"
             android:paddingRight="40dp"
             android:orientation="horizontal"
             android:weightSum="4"
@@ -22,58 +20,93 @@
             >
                 <TextView
                     android:id="@+id/one"
+                    android:gravity="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tháng"
+                    android:paddingTop="10dp"
                     android:textSize="16sp"
                     android:textColor="@android:color/white"
                     ></TextView>
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center|end"
+                    android:src="@drawable/nexticon"></ImageView>
                 <NumberPicker
                     android:id="@+id/np"
                     style="@android:style/Widget.Material.Light.NumberPicker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
+                    android:layout_width="38dp"
+                    android:layout_height="80dp"
                     android:textAlignment="center"
                     android:textDirection="firstStrongLtr"
                     tools:targetApi="n"
-                    android:layout_weight="1"
                     android:theme="@style/NumberPickerTheme"
                     android:layout_gravity="center_horizontal" />
                 <TextView
+                    android:layout_marginStart="40dp"
                     android:id="@+id/tow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ngày"
+                    android:paddingTop="10dp"
+                    android:gravity="center|end"
                     android:textSize="16sp"
                     android:textColor="@android:color/white"
                     ></TextView>
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center|end"
+                    android:src="@drawable/nexticon"></ImageView>
                 <NumberPicker
                     android:id="@+id/np1"
                     style="@android:style/Widget.Material.Light.NumberPicker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
+                    android:layout_width="38dp"
+                    android:layout_height="80dp"
                     android:textAlignment="center"
                     android:textDirection="firstStrongLtr"
                     tools:targetApi="n"
-                    android:layout_weight="1"
                     android:theme="@style/NumberPickerTheme"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal" >
+
+
+                </NumberPicker>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-                android:layout_weight="1"
 
-                ></TextView>
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/next_button"
-            android:layout_width="match_parent"
-            android:text="Tiếp Theo"
-            android:layout_gravity="bottom"
-            android:layout_height="50dp"
+        <TextView
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/textAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            >
+
+        </TextView>
+        <TextView
             android:textColor="@android:color/white"
-            android:background="@android:color/holo_blue_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+                >
+
+        </TextView>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="100dp"
+            android:text="Tiếp Theo"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            android:layout_height="35dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/padding"
             />
         </androidx.appcompat.widget.LinearLayoutCompat>
